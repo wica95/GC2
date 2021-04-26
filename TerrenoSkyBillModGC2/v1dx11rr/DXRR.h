@@ -9,6 +9,28 @@
 #include "SkyDome.h"
 #include "Billboard.h"
 #include "ModeloRR.h"
+#include "Modelo001church.h"
+#include "M02bull.h"
+#include "M03houseEastern.h"
+#include "M04woodenCabinA.h"
+#include "M04woodenCabinB.h"
+#include "M05RuinedBuilding.h"
+#include "M06campfire.h"
+#include "M07tree.h"
+#include "M09molino.h"
+#include "M10flag.h"
+#include "M11barrel.h"
+#include "M12bride.h"
+#include "M13pozo.h"
+#include "M14TreeMonster.h"
+#include "M15minibridge.h"
+#include "M16fountainA.h"
+#include "M16fountainB.h"
+#include "M17castleA.h"
+#include "M17castleB.h"
+#include "M18MarketGray.h"
+#include "M19Rock.h"
+
 #include "XACT3Util.h"
 
 class DXRR{	
@@ -43,6 +65,36 @@ public:
 	BillboardRR *billboard;
 	Camara *camara;
 	ModeloRR* model;
+	Modelo001church* m01church;
+	M02bull* m02bull;
+	M02bull* m02bull02;
+	ModeloRR* m02bull03;
+	ModeloRR* m02bull04;
+	M03houseEastern* m03houseEastern;
+	M04woodenCabinA* m04woodenCabinA;
+	M04woodenCabinB* m04woodenCabinB;
+	M05RuinedBuilding* m05RuinedBuilding;
+	M06campfire* m06campfire;
+	M07tree* m07tree;
+	ModeloRR* m08;
+
+	M09molino* m09molino;
+	ModeloRR* m09molinoE1;
+	ModeloRR* m09molinoE2;
+	ModeloRR* m09molinoE3;
+
+	M10flag* m10flag;
+	M11barrel* m11barrel;
+	M12bride* m12bride;
+	M13pozo* m13pozo;
+	M14TreeMonster* m14TreeMonster;
+	M15minibridge* m15minibridge;
+	M16fountainA* m16fountainA;
+	M16fountainB* m16fountainB;
+	M17castleA* m17castleA;
+	M17castleB* m17castleB;
+	M18MarketGray* m18MarketGray;
+	M19Rock* m19Rock;
 	
 	float izqder;
 	float arriaba;
@@ -77,10 +129,31 @@ public:
 		skydome = new SkyDome(32, 32, 100.0f, &d3dDevice, &d3dContext, L"SkyDome.png");
 		billboard = new BillboardRR(L"Assets/Billboards/fuego-anim.png",L"Assets/Billboards/fuego-anim-normal.png", d3dDevice, d3dContext, 5);
 		model = new ModeloRR(d3dDevice, d3dContext, "Assets/Cofre/Cofre.obj", L"Assets/Cofre/Cofre-color.png", L"Assets/Cofre/Cofre-spec.png", 0, 0);
-
+		
+		m01church = new Modelo001church(d3dDevice, d3dContext, "Assets//001_Church_01//001_ChurchNew.obj", L"Assets/001_Church_01/chapel_diffuse.jpg", L"Assets/Cofre/Cofre-spec.png", -85.0f, 41.0f);
+		m02bull = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew01.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/Cofre/Cofre-spec.png", -10.0f, -129.0f);
+		m03houseEastern = new M03houseEastern(d3dDevice, d3dContext, "Assets//003_Middle_Eastern_Houses_OBJ//003_EasternHouseNew.obj", L"Assets/003_Middle_Eastern_Houses_OBJ/Bulding8Paint.jpg", L"Assets/Cofre/Cofre-spec.png", -10.0f, -129.0f);
+		m04woodenCabinA = new M04woodenCabinA(d3dDevice, d3dContext, "Assets//004_WoodenCabinObj//004_WoodenC01New.obj", L"Assets/004_WoodenCabinObj/WoodCabinDif.jpg", L"Assets/Cofre/Cofre-spec.png", -86.0f, -23.0f);
+		m04woodenCabinB = new M04woodenCabinB(d3dDevice, d3dContext, "Assets//004_WoodenCabinObj//004_WoodenC02New.obj", L"Assets/004_WoodenCabinObj/WoodCabinDif.jpg", L"Assets/Cofre/Cofre-spec.png", -86.0f, -23.0f);
+		m05RuinedBuilding = new M05RuinedBuilding(d3dDevice, d3dContext, "Assets//005_Ruined_building_OBJ//005_Newruinedbuilding.obj", L"Assets/005_Ruined_building_OBJ/text.jpg", L"Assets/Cofre/Cofre-spec.png", -50.0f, 44.0f);
+		m06campfire = new M06campfire(d3dDevice, d3dContext, "Assets//006_campfire//006_CampfireNew.obj", L"Assets/006_campfire/brick.jpg", L"Assets/Cofre/Cofre-spec.png", 22.0f, 80.0f);
+		m07tree = new M07tree(d3dDevice, d3dContext, "Assets//007_Tree_OBJ//007_TreeNew.obj", L"Assets/007_Tree_OBJ/Tree.jpg", L"Assets/Cofre/Cofre-spec.png", -10.0f, -92.0f);
+		m09molino = new M09molino(d3dDevice, d3dContext, "Assets//009Molino//MolinoNew.obj", L"Assets/009Molino/windmill_diffuse.png", L"Assets/Cofre/Cofre-spec.png", -120.0f, 0.0f);
+		m10flag = new M10flag(d3dDevice, d3dContext, "Assets//010_flag//0010_FlagNew.obj", L"Assets//010_flag/010_FlagB.jpg", L"Assets/Cofre/Cofre-spec.png", 63.0f, -12.0f);
+		m11barrel = new M11barrel(d3dDevice, d3dContext, "Assets//011_barrel//0011_BarrelNew.obj", L"Assets/011_barrel/barrel_diffuse.png", L"Assets/Cofre/Cofre-spec.png", -23.5f, -6.0f);
+		m12bride = new M12bride(d3dDevice, d3dContext, "Assets//012_Bridge//0012_BridgeNew.obj", L"Assets/012_Bridge/BridgeMap.jpg", L"Assets/Cofre/Cofre-spec.png", -153.0f, -100.0f);
+		m13pozo = new M13pozo(d3dDevice, d3dContext, "Assets//013_Pozo//PozoNew.obj", L"Assets/013_Pozo/brick.jpg", L"Assets/Cofre/Cofre-spec.png", -20.0f, -36.0f);
+		m14TreeMonster = new M14TreeMonster(d3dDevice, d3dContext, "Assets//014_treem//0014_TreeNew.obj", L"Assets/014_treem/014color.png", L"Assets/Cofre/Cofre-spec.png", 10.0f, 10.0f);
+		m15minibridge = new M15minibridge(d3dDevice, d3dContext, "Assets//015_MiniBridge//0015_BridgeNew.obj", L"Assets/015_MiniBridge/Castlewalls_1.png", L"Assets/Cofre/Cofre-spec.png", 37.0f, -105.0f);
+		m16fountainA = new M16fountainA(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain01NewNew.obj", L"Assets/016_Fuente/germany010.jpg", L"Assets/Cofre/Cofre-spec.png", 10.0f, 10.0f);
+		m16fountainB = new M16fountainB(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain02New.obj", L"Assets/016_Fuente/seawaterfull2.jpg", L"Assets/Cofre/Cofre-spec.png", 10.0f, 10.0f);
+		
+		m17castleA = new M17castleA(d3dDevice, d3dContext, "Assets//017_Castelo//017_CastleNewA01.obj", L"Assets/017_Castelo/download.jpg", L"Assets/Cofre/Cofre-spec.png", 100.0f, -25.0f);
+		m17castleB = new M17castleB(d3dDevice, d3dContext, "Assets//017_Castelo//017_CastleNewA02.obj", L"Assets/017_Castelo/download2.jpg", L"Assets/Cofre/Cofre-spec.png", 100.0f, -25.0f);
+		m18MarketGray = new M18MarketGray(d3dDevice, d3dContext, "Assets//018_Market//MarketNewNew.obj", L"Assets/018_Market/Market_Texture.png", L"Assets/Cofre/Cofre-spec.png", 9.0f, 45.0f);
+		m19Rock = new M19Rock(d3dDevice, d3dContext, "Assets//019_Rock//RockNew.obj", L"Assets/019_Rock/Rock_1_Base_Color.jpg", L"Assets/Cofre/Cofre-spec.png", 90.0f, 133.0f);
 		
 
-		
 	}
 
 	~DXRR()
@@ -274,7 +347,32 @@ public:
 			-11, -78, 4, 5, uv1, uv2, uv3, uv4, frameBillboard);
 
 		//TurnOffAlphaBlending();
-		model->Draw(camara->vista, camara->proyeccion, terreno->Superficie(100, 20), camara->posCam, 10.0f, 0, 'A', 1);
+		model->Draw(camara->vista, camara->proyeccion, terreno->Superficie(100, 20), camara->posCam, 1.0f, 0, 'A', 1);
+
+		m01church->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-85.0f, 41.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m02bull->Draw(camara->vista, camara->proyeccion, terreno->Superficie(90.0f, -19.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m03houseEastern->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-10.0f, -129.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m04woodenCabinA->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-86.0f, -23.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m04woodenCabinB->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-86.0f, -23.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m05RuinedBuilding->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-50.0f, 44.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m06campfire->Draw(camara->vista, camara->proyeccion, terreno->Superficie(22.0f, 80.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m07tree->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-10.0f, -92.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m09molino->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-120.0f, 0.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m10flag->Draw(camara->vista, camara->proyeccion, terreno->Superficie(63.0f, -12.0f), camara->posCam, 10.0f, 0, 'A', 0.5f);
+		m11barrel->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-23.5f, -6.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m12bride->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-153.0f, -100.0f), camara->posCam, 10.0f, 0, 'A', 0.1f);
+		m13pozo->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-20.0f, -36.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m14TreeMonster->Draw(camara->vista, camara->proyeccion, terreno->Superficie(10.0f, 10.0f), camara->posCam, 10.0f, 0, 'A', 0.5f);
+		m15minibridge->Draw(camara->vista, camara->proyeccion, terreno->Superficie(37.0f, -105.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m16fountainA->Draw(camara->vista, camara->proyeccion, terreno->Superficie(10.0f, 10.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m16fountainB->Draw(camara->vista, camara->proyeccion, terreno->Superficie(10.0f, 10.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+
+		m17castleA->Draw(camara->vista, camara->proyeccion, terreno->Superficie(100.0f, -25.0f), camara->posCam, 10.0f, 0, 'A', 0.14f);
+		m17castleB->Draw(camara->vista, camara->proyeccion, terreno->Superficie(100.0f, -25.0f), camara->posCam, 10.0f, 0, 'A', 0.14f);
+		m18MarketGray->Draw(camara->vista, camara->proyeccion, terreno->Superficie(9.0f, 45.0f), camara->posCam, 10.0f, 0, 'A', 0.6f);
+		m19Rock->Draw(camara->vista, camara->proyeccion, terreno->Superficie(73.0f, 85.0f), camara->posCam, 10.0f, 0, 'A', 0.8f);
+
+
 
 		swapChain->Present( 1, 0 );
 	}
