@@ -97,7 +97,9 @@ public:
 	M19Rock* m19Rock;
 	
 	float izqder;
-	float arriaba;
+	float arriba;
+	float derech;
+	float abajo;
 	float vel;
 	bool breakpoint;
 	vector2 uv1[32];
@@ -122,7 +124,9 @@ public:
 		backBufferTarget = 0;
 		IniciaD3D(hWnd);
 		izqder = 0;
-		arriaba = 0;
+		arriba = 0;
+		abajo = 0;
+		derech = 0;
 		billCargaFuego();
 		camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
 		terreno = new TerrenoRR(300, 300, d3dDevice, d3dContext);
@@ -333,7 +337,7 @@ public:
 		d3dContext->ClearRenderTargetView( backBufferTarget, clearColor );
 		d3dContext->ClearDepthStencilView( depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0 );
 		camara->posCam.y = terreno->Superficie(camara->posCam.x, camara->posCam.z) + 5 ;
-		camara->UpdateCam(vel, arriaba, izqder);
+		camara->UpdateCam(vel, arriba, izqder);
 		skydome->Update(camara->vista, camara->proyeccion);
 
 		float camPosXZ[2] = { camara->posCam.x, camara->posCam.z };

@@ -66,6 +66,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
     wc.cbSize = sizeof(WNDCLASSEX);
 
 
+
+
     RegisterClassEx(&wc);
 
     // If full screen set the screen to maximum size of the users desktop and 32bit.
@@ -174,7 +176,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
                 dxrr->frameBillboard = 0;
 
             dxrr->izqder = 0;
-            dxrr->arriaba = 0;
+            dxrr->arriba = 0;
             dxrr->vel = 0;
             char keyboardData[256];
             m_pKeyboardDevice->GetDeviceState(sizeof(keyboardData), (void*)&keyboardData);
@@ -203,7 +205,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 
             // Mouse move
             dxrr->izqder = (mouseData.lX / 1000.0f);
-            dxrr->arriaba = -(mouseData.lY / 1000.0f);
+            dxrr->arriba = -(mouseData.lY / 1000.0f);
 
             if (gamePad->IsConnected())
             {
@@ -215,7 +217,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 
                 grados = (float)gamePad->GetState().Gamepad.sThumbRY / 32767.0;
 
-                if (grados > 0.19 || grados < -0.19)dxrr->arriaba = grados / 15;
+                if (grados > 0.19 || grados < -0.19)dxrr->arriba = grados / 15;
 
 
                 float velocidad = (float)gamePad->GetState().Gamepad.sThumbLY / 32767.0;

@@ -1,4 +1,4 @@
-﻿D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (Terreno.vcxproj, TerrenoSky.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Terreno.vcxproj, TerrenoSky.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   TerrenoSkyBill.cpp
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(12,1): warning C4005: 'DXGI_STATUS_OCCLUDED': redefinición de macro
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h(55840): message : vea la definición anterior de 'DXGI_STATUS_OCCLUDED'
@@ -56,17 +56,17 @@ C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3d10.h(608,1):
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h(56279): message : vea la definición anterior de 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3d10.h(609,1): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': redefinición de macro
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h(56288): message : vea la definición anterior de 'D3D10_ERROR_FILE_NOT_FOUND'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(208,85): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(310,63): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(310,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(369,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(400,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(463,21): warning C4018: '<': no coinciden signed/unsigned
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(465,19): warning C4018: '<': no coinciden signed/unsigned
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Camara.h(37,63): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Camara.h(37,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Billboard.h(395,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Billboard.h(396,15): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(208,85): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(310,63): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(310,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(369,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(400,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(463,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoRR.h(465,19): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\Camara.h(37,63): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\Camara.h(37,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\Billboard.h(395,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\Billboard.h(396,15): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamath.h(2662,52): warning C4838: la conversión de 'unsigned int' en 'INT' requiere una conversión de restricción
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamath.h(2662,64): warning C4838: la conversión de 'unsigned int' en 'INT' requiere una conversión de restricción
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamath.h(2662,76): warning C4838: la conversión de 'unsigned int' en 'INT' requiere una conversión de restricción
@@ -129,92 +129,92 @@ C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathvector.i
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(518,43): warning C4838: la conversión de 'unsigned int' en 'INT' requiere una conversión de restricción
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(519,40): warning C4838: la conversión de 'unsigned int' en 'INT' requiere una conversión de restricción
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\xnamathmisc.inl(519,51): warning C4838: la conversión de 'unsigned int' en 'INT' requiere una conversión de restricción
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloRR.h(297,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloRR.h(297,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloRR.h(357,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Modelo001church.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Modelo001church.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Modelo001church.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M02bull.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M02bull.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M02bull.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M03houseEastern.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M03houseEastern.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M03houseEastern.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinA.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinA.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinA.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinB.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinB.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinB.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M05RuinedBuilding.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M05RuinedBuilding.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M05RuinedBuilding.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M06campfire.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M06campfire.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M06campfire.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M07tree.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M07tree.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M07tree.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M09molino.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M09molino.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M09molino.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M10flag.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M10flag.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M10flag.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M11barrel.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M11barrel.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M11barrel.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M12bride.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M12bride.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M12bride.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M13pozo.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M13pozo.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M13pozo.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M14TreeMonster.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M14TreeMonster.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M14TreeMonster.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M15minibridge.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M15minibridge.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M15minibridge.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainA.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainA.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainA.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainB.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainB.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainB.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleA.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleA.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleA.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleB.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleB.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleB.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M18MarketGray.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M18MarketGray.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M18MarketGray.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M19Rock.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M19Rock.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M19Rock.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(326,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(508,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(509,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(510,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(511,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(519,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(520,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(521,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(522,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(531,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(532,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(533,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(534,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(543,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(544,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(545,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(546,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-  C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(146,15): warning C4244: 'return': conversión de 'WPARAM' a 'int'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(212,30): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(216,70): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(221,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  v1dx11rr.vcxproj -> D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\TerrenoSkyBill.exe
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloRR.h(297,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloRR.h(297,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloRR.h(357,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\Modelo001church.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\Modelo001church.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\Modelo001church.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M02bull.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M02bull.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M02bull.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M03houseEastern.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M03houseEastern.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M03houseEastern.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinA.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinA.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinA.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinB.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinB.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M04woodenCabinB.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M05RuinedBuilding.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M05RuinedBuilding.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M05RuinedBuilding.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M06campfire.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M06campfire.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M06campfire.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M07tree.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M07tree.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M07tree.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M09molino.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M09molino.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M09molino.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M10flag.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M10flag.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M10flag.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M11barrel.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M11barrel.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M11barrel.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M12bride.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M12bride.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M12bride.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M13pozo.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M13pozo.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M13pozo.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M14TreeMonster.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M14TreeMonster.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M14TreeMonster.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M15minibridge.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M15minibridge.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M15minibridge.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainA.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainA.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainA.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainB.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainB.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M16fountainB.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleA.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleA.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleA.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleB.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleB.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M17castleB.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M18MarketGray.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M18MarketGray.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M18MarketGray.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M19Rock.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M19Rock.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\M19Rock.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(330,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(512,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(513,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(514,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(515,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(523,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(524,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(525,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(526,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(535,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(536,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(537,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(538,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(547,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(548,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(549,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(550,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(550,29): warning C4244: C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(148,15): warning C4244: 'return': conversión de 'WPARAM' a 'int'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(214,30): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(218,70): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(223,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  v1dx11rr.vcxproj -> C:\Users\diego\Documents\Programacion web\PW Proyecto\GC2\TerrenoSkyBillModGC2\x64\Debug\TerrenoSkyBill.exe
