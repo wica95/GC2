@@ -157,6 +157,7 @@
     <ClCompile Include="XACT3Util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ANG.h" />
     <ClInclude Include="Billboard.h" />
     <ClInclude Include="Camara.h" />
     <ClInclude Include="DXRR.h" />
@@ -180,7 +181,9 @@
     <ClInclude Include="M16fountainB.h" />
     <ClInclude Include="M17castleA.h" />
     <ClInclude Include="M17castleB.h" />
+    <ClInclude Include="M18castleA2.h" />
     <ClInclude Include="M18MarketGray.h" />
+    <ClInclude Include="M19castleA3.h" />
     <ClInclude Include="M19Rock.h" />
     <ClInclude Include="Modelo001church.h" />
     <ClInclude Include="ModeloRR.h" />
