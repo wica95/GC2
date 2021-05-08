@@ -352,7 +352,7 @@ public:
 
 	}
 
-	void Draw(D3DXMATRIX vista, D3DXMATRIX proyeccion, float ypos, D3DXVECTOR3 posCam, float specForce, float rot, char angle, float scale)
+	void Draw(D3DXMATRIX vista, D3DXMATRIX proyeccion, float xpos, float ypos, float zpos, D3DXVECTOR3 posCam, float specForce, float rot, char angle, float scale)
 	{
 		static float rotation = 0.0f;
 		rotation += 0.01;
@@ -387,7 +387,8 @@ public:
 		D3DXMATRIX rotationMat;
 		D3DXMatrixRotationYawPitchRoll(&rotationMat, 0.0f, 0.0f, 0.0f);
 		D3DXMATRIX translationMat;
-		D3DXMatrixTranslation(&translationMat, posX, ypos, posZ);
+
+		D3DXMatrixTranslation(&translationMat, xpos, ypos, zpos);
 		if (angle == 'X')
 			D3DXMatrixRotationX(&rotationMat, rot);
 		else if (angle == 'Y')

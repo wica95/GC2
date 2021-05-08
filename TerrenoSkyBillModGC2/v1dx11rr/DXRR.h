@@ -100,10 +100,15 @@ public:
 	M19Rock* m19Rock;
 	
 	float izqder;
+	float giroide;
 	float arriba;
 	float derech;
 	float abajo;
 	float vel;
+
+	float iprevx;
+	float iprevz;
+
 	bool breakpoint;
 	vector2 uv1[32];
 	vector2 uv2[32];
@@ -127,9 +132,12 @@ public:
 		backBufferTarget = 0;
 		IniciaD3D(hWnd);
 		izqder = 0;
+		giroide = 0;
 		arriba = 0;
 		abajo = 0;
 		derech = 0;
+		iprevx = 0;
+		iprevz = 0;
 		billCargaFuego();
 		camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
 		terreno = new TerrenoRR(300, 300, d3dDevice, d3dContext);
@@ -340,12 +348,46 @@ public:
 		float clearColor[4] = { 0, 0, 0, 1.0f };
 		d3dContext->ClearRenderTargetView( backBufferTarget, clearColor );
 		d3dContext->ClearDepthStencilView( depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0 );
+
+
 		camara->posCam.y = terreno->Superficie(camara->posCam.x, camara->posCam.z) + 5 ;
-		camara->UpdateCam(vel, arriba, izqder);
+		float prevx = 0;
+		float prevz = 0;
+		float actx = 0;
+		float actz = 0;
+		if (iprevx == 0) {
+			iprevx = camara->posCam.x;
+			iprevz = camara->posCam.z;
+		}
+
+		if (vel == 0) {
+			camara->UpdateCam(vel, arriba, izqder);
+			camara->posCam.x = iprevx;
+			camara->posCam.z = iprevz;
+		}
+		else {
+			camara->UpdateCam(vel, arriba, izqder);
+			camara->UpdateCam(-vel*20, 0, 0);
+			iprevx = camara->posCam.x;
+			iprevz = camara->posCam.z;
+
+		}
+
+		/*camara->UpdateCam(vel, arriba, izqder);*/
+		
+		
+
+		//actx = camara->posCam.x;
+		//actz = camara->posCam.z;
+
+
+		//camara->posCam.x = prevx;
+		//camara->posCam.z = prevz;
+		giroide = giroide + izqder;
 		skydome->Update(camara->vista, camara->proyeccion);
-
+		
 		float camPosXZ[2] = { camara->posCam.x, camara->posCam.z };
-
+		
 		TurnOffDepth();
 		skydome->Render(camara->posCam);
 		TurnOnDepth();
@@ -381,8 +423,29 @@ public:
 		m19Rock->Draw(camara->vista, camara->proyeccion, terreno->Superficie(73.0f, 85.0f), camara->posCam, 10.0f, 0, 'A', 0.8f);
 
 		
-		ANG->Draw(camara->vista, camara->proyeccion, terreno->Superficie(73.0f, 85.0f), camara->posCam, 10.0f, 0, 'A', 0.1f);
+
+		ANG->Draw(camara->vista, camara->proyeccion, 10.0f, terreno->Superficie(10.0f, 0.0f), 0.0f, camara->posCam, 10.0f, angle, 'Y', 0.1f);
+		ANG->Draw(camara->vista, camara->proyeccion, 30.0f, terreno->Superficie(30.0f, 0.0f), 0.0f, camara->posCam, 10.0f, giroide, 'Y', 0.1f);
+		ANG->Draw(camara->vista, camara->proyeccion, camara->posCam.x, terreno->Superficie(camara->posCam.x, camara->posCam.z)-4.0f, camara->posCam.z, camara->posCam, 10.0f, giroide, 'Y', 0.1f);
+		
+
+		if (vel != 0) {
+			camara->UpdateCam(vel*20, 0, 0);
+			iprevx = camara->posCam.x;
+			iprevz = camara->posCam.z;
+		}
+
+
+		//camara->UpdateCam(-vel * 19, arriba, izqder);
+		//camara->UpdateCam(vel * 19, 0, 0);
+		//camara->UpdateCam(vel, 0, 0);
 		swapChain->Present( 1, 0 );
+		
+		
+
+		//camara->posCam.x = actx;
+		//camara->posCam.z = actz;
+		
 	}
 
 	bool isPointInsideSphere(float* point, float* sphere) {
