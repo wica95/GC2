@@ -65,6 +65,8 @@ public:
 	SkyDome *skydome;
 	BillboardRR *billboard;
 	Camara *camara;
+	Camara* camara2;
+	Camara* ActCam;
 	ModeloRR* model;
 	Modelo001church* m01church;
 	M02bull* m02bull;
@@ -105,6 +107,7 @@ public:
 	float derech;
 	float abajo;
 	float vel;
+	int ncamara;
 
 	float iprevx;
 	float iprevz;
@@ -138,8 +141,11 @@ public:
 		derech = 0;
 		iprevx = 0;
 		iprevz = 0;
+		ncamara = 0;
 		billCargaFuego();
+		//camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
 		camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
+		camara2 = new Camara(D3DXVECTOR3(0, 80, 6), D3DXVECTOR3(0, 80, 0), D3DXVECTOR3(0, 1, 0), Ancho, Alto);
 		terreno = new TerrenoRR(300, 300, d3dDevice, d3dContext);
 		skydome = new SkyDome(32, 32, 100.0f, &d3dDevice, &d3dContext, L"SkyDome2.png");
 		billboard = new BillboardRR(L"Assets/Billboards/fuego-anim.png",L"Assets/Billboards/fuego-anim-normal.png", d3dDevice, d3dContext, 5);
@@ -167,7 +173,7 @@ public:
 		m17castleB = new M17castleB(d3dDevice, d3dContext, "Assets//017_Castelo//017_CastleNewA02.obj", L"Assets/017_Castelo/download2.jpg", L"Assets/Cofre/Cofre-spec.png", 40.0f, -65.0f);
 		m18MarketGray = new M18MarketGray(d3dDevice, d3dContext, "Assets//018_Market//MarketNewNew.obj", L"Assets/018_Market/Market_Texture.png", L"Assets/Cofre/Cofre-spec.png", -60.0f, 0.0f);
 		m19Rock = new M19Rock(d3dDevice, d3dContext, "Assets//019_Rock//RockNew.obj", L"Assets/019_Rock/Rock_1_Base_Color.jpg", L"Assets/Cofre/Cofre-spec.png", 90.0f, 100.0f);
-		ANG = new M24_ANG(d3dDevice, d3dContext, "Assets//024_Ang//ANGP.obj", L"Assets/024_Ang/andpiel.png", L"Assets/Cofre/Cofre-spec.png", 10.0f, 0.0f);
+		ANG = new M24_ANG(d3dDevice, d3dContext, "Assets//024_Ang//newANGP.obj", L"Assets/024_Ang/andpiel2.png", L"Assets/Cofre/Cofre-spec.png", 10.0f, 0.0f);
 	    m18castleA2 = new M18castleA2(d3dDevice, d3dContext, "Assets//018_Castel//m18castleA2.obj", L"Assets/017_Castelo/download.jpg", L"Assets/Cofre/Cofre-spec.png", -50.0f, 0.0f);
 		m19castleA3 = new M19castleA3(d3dDevice, d3dContext, "Assets//019_Castel//m19castleA3.obj", L"Assets/017_Castelo/download.jpg", L"Assets/Cofre/Cofre-spec.png", -100.0f, -25.0f);
 	}
@@ -339,7 +345,7 @@ public:
 		float sphere[3] = { 0,0,0 };
 		float prevPos[3] = { camara->posCam.x, camara->posCam.z, camara->posCam.z };
 		static float angle = 0.0f;
-		angle += 0.005;
+		angle += 0.0005;
 		if (angle >= 360) angle = 0.0f;
 		bool collide = false;
 		if( d3dContext == 0 )
@@ -351,27 +357,55 @@ public:
 
 
 		camara->posCam.y = terreno->Superficie(camara->posCam.x, camara->posCam.z) + 5 ;
+		camara2->posCam.y = terreno->Superficie(camara->posCam.x, camara->posCam.z) + 5;
 		float prevx = 0;
 		float prevz = 0;
 		float actx = 0;
 		float actz = 0;
-		if (iprevx == 0) {
-			iprevx = camara->posCam.x;
-			iprevz = camara->posCam.z;
-		}
+		//if (iprevx == 0) {
+		//	iprevx = camara->posCam.x;
+		//	iprevz = camara->posCam.z;
+		//}
 
-		if (vel == 0) {
-			camara->UpdateCam(vel, arriba, izqder);
-			camara->posCam.x = iprevx;
-			camara->posCam.z = iprevz;
+		//if (vel == 0) {
+		camara->UpdateCam(vel, arriba, izqder);
+		camara2->posCam.x = camara->posCam.x;
+		camara2->posCam.z = camara->posCam.x;
+
+		camara2->posCam = camara->posCam;
+		//camara2->hdveo = camara->hdveo;
+		//camara2->hdvoy = camara->hdveo;
+		//camara2->refUp = camara->hdveo;
+		//camara2->refRight = camara->hdveo;
+		//camara2->refFront = camara->hdveo;
+
+		if (vel != 0) {
+			camara2->UpdateCam(-vel * 10, arriba, izqder);
+		}
+		else if (vel < 0){
+			camara2->UpdateCam(vel * -10, arriba, izqder);
 		}
 		else {
-			camara->UpdateCam(vel, arriba, izqder);
-			camara->UpdateCam(-vel*20, 0, 0);
-			iprevx = camara->posCam.x;
-			iprevz = camara->posCam.z;
-
+			camara2->UpdateCam(-5.0f * 10, arriba, izqder);
 		}
+
+		if (ncamara == 0) {
+			ActCam = camara;
+		}
+		else {
+			ActCam = camara2;
+		}
+
+		//	camara->posCam.x = iprevx;
+		//	camara->posCam.z = iprevz;
+		//}
+		//else {
+		//	camara->UpdateCam(vel, arriba, izqder);
+		//	camara->UpdateCam(-vel*20, 0, 0);
+		//	iprevx = camara->posCam.x;
+		//	iprevz = camara->posCam.z;
+
+		//}
 
 		/*camara->UpdateCam(vel, arriba, izqder);*/
 		
@@ -384,56 +418,59 @@ public:
 		//camara->posCam.x = prevx;
 		//camara->posCam.z = prevz;
 		giroide = giroide + izqder;
-		skydome->Update(camara->vista, camara->proyeccion);
+		skydome->Update(camara2->vista, camara2->proyeccion);
 		
 		float camPosXZ[2] = { camara->posCam.x, camara->posCam.z };
 		
 		TurnOffDepth();
-		skydome->Render(camara->posCam);
+		skydome->Render(camara2->posCam, angle, 'Y');
 		TurnOnDepth();
-		terreno->Draw(camara->vista, camara->proyeccion);
+		terreno->Draw(ActCam->vista, ActCam->proyeccion);
 		//TurnOnAlphaBlending();
 		billboard->Draw(camara->vista, camara->proyeccion, camara->posCam,
 			-11, -78, 4, 5, uv1, uv2, uv3, uv4, frameBillboard);
 
 		//TurnOffAlphaBlending();
-		model->Draw(camara->vista, camara->proyeccion, terreno->Superficie(100, 20), camara->posCam, 1.0f, 0, 'A', 1);
+		model->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(100, 20), ActCam->posCam, 1.0f, 0, 'A', 1);
 
-		m01church->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-85.0f, 41.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m02bull->Draw(camara->vista, camara->proyeccion, terreno->Superficie(90.0f, -19.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m03houseEastern->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-10.0f, -129.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m04woodenCabinA->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-86.0f, -23.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m04woodenCabinB->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-86.0f, -23.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m05RuinedBuilding->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-50.0f, 44.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m06campfire->Draw(camara->vista, camara->proyeccion, terreno->Superficie(22.0f, 80.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m07tree->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-10.0f, -92.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m09molino->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-120.0f, 0.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m10flag->Draw(camara->vista, camara->proyeccion, terreno->Superficie(63.0f, -12.0f), camara->posCam, 10.0f, 0, 'A', 0.5f);
-		m11barrel->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-23.5f, -6.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m12bride->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-153.0f, -100.0f), camara->posCam, 10.0f, 0, 'A', 0.1f);
-		m13pozo->Draw(camara->vista, camara->proyeccion, terreno->Superficie(-20.0f, -36.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m14TreeMonster->Draw(camara->vista, camara->proyeccion, terreno->Superficie(10.0f, 10.0f), camara->posCam, 10.0f, 0, 'A', 0.5f);
-		m15minibridge->Draw(camara->vista, camara->proyeccion, terreno->Superficie(37.0f, -105.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m16fountainA->Draw(camara->vista, camara->proyeccion, terreno->Superficie(10.0f, 10.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
-		m16fountainB->Draw(camara->vista, camara->proyeccion, terreno->Superficie(10.0f, 10.0f), camara->posCam, 10.0f, 0, 'A', 0.2f);
+		m01church->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-85.0f, 41.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		//m02bull->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(90.0f, -19.0f), ActCam->posCam, 10.0f, 0, 'A', 0.1f);
+		m03houseEastern->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-10.0f, -129.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m04woodenCabinA->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-86.0f, -23.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m04woodenCabinB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-86.0f, -23.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m05RuinedBuilding->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-50.0f, 44.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m06campfire->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(22.0f, 80.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m07tree->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-10.0f, -92.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m09molino->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-120.0f, 0.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m10flag->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(63.0f, -12.0f), ActCam->posCam, 10.0f, 0, 'A', 0.5f);
+		m11barrel->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-23.5f, -6.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+		m12bride->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-153.0f, -100.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.1f);
+		m13pozo->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-20.0f, -36.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+		m14TreeMonster->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.5f);
+		m15minibridge->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(37.0f, -105.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+		m16fountainA->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+		m16fountainB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
 
-		m17castleA->Draw(camara->vista, camara->proyeccion, terreno->Superficie(100.0f, -25.0f), camara->posCam, 10.0f, 0, 'A', 0.14f);
-		m17castleB->Draw(camara->vista, camara->proyeccion, terreno->Superficie(100.0f, -25.0f), camara->posCam, 10.0f, 0, 'A', 0.14f);
-		m18MarketGray->Draw(camara->vista, camara->proyeccion, terreno->Superficie(9.0f, 45.0f), camara->posCam, 10.0f, 0, 'A', 0.6f);
-		m19Rock->Draw(camara->vista, camara->proyeccion, terreno->Superficie(73.0f, 85.0f), camara->posCam, 10.0f, 0, 'A', 0.8f);
+		m17castleA->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(100.0f, -25.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.14f);
+		m17castleB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(100.0f, -25.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.14f);
+		m18MarketGray->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(9.0f, 45.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.6f);
+		m19Rock->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(73.0f, 85.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.8f);
 
 		
 
-		ANG->Draw(camara->vista, camara->proyeccion, 10.0f, terreno->Superficie(10.0f, 0.0f), 0.0f, camara->posCam, 10.0f, angle, 'Y', 0.1f);
-		ANG->Draw(camara->vista, camara->proyeccion, 30.0f, terreno->Superficie(30.0f, 0.0f), 0.0f, camara->posCam, 10.0f, giroide, 'Y', 0.1f);
-		ANG->Draw(camara->vista, camara->proyeccion, camara->posCam.x, terreno->Superficie(camara->posCam.x, camara->posCam.z)-4.0f, camara->posCam.z, camara->posCam, 10.0f, giroide, 'Y', 0.1f);
+		ANG->Draw(ActCam->vista, ActCam->proyeccion, 10.0f, terreno->Superficie(10.0f, 0.0f), 0.0f, ActCam->hdveo, 10.0f, angle, 'Y', 0.1f);
+		ANG->Draw(ActCam->vista, ActCam->proyeccion, 30.0f, terreno->Superficie(30.0f, 0.0f), 0.0f, ActCam->hdveo, 10.0f, giroide, 'Y', 0.1f);
+
+		ANG->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z)-1.0f, camara->hdveo.z, camara->hdveo, 10.0f, giroide + 330.0f, 'Y', 0.1f);
+		m02bull->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z) - 1.0f, camara->hdveo.z, camara->hdveo, 10.0f, giroide + 330.0f, 'Y', 0.1f);
+		//ANG->Draw(camara->vista, camara->proyeccion, camara->posCam.x, terreno->Superficie(camara->posCam.x, camara->posCam.z) - 1.0f, camara->posCam.z, camara->posCam, 10.0f, giroide, 'Y', 0.04f);
 		
 
-		if (vel != 0) {
-			camara->UpdateCam(vel*20, 0, 0);
-			iprevx = camara->posCam.x;
-			iprevz = camara->posCam.z;
-		}
+		//if (vel != 0) {
+		//	camara->UpdateCam(vel*20, 0, 0);
+		//	iprevx = camara->posCam.x;
+		//	iprevz = camara->posCam.z;
+		//}
 
 
 		//camara->UpdateCam(-vel * 19, arriba, izqder);

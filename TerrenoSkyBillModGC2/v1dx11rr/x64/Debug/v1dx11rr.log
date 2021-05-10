@@ -204,26 +204,26 @@ D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\M19castl
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ANG.h(298,64): warning C4244: 'argumento': conversión de 'int' a 'FLOAT'; posible pérdida de datos
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ANG.h(298,1): warning C4305: 'argumento': truncamiento de 'double' a 'FLOAT'
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ANG.h(358,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(342,1): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(579,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(580,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(581,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(582,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(590,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(591,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(592,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(593,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(602,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(603,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(604,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(605,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(614,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(615,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(616,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(617,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(348,1): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(616,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(617,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(618,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(619,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(627,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(628,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(629,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(630,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(639,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(640,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(641,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(642,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(651,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(652,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(653,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(654,29): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
   C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(148,15): warning C4244: 'return': conversión de 'WPARAM' a 'int'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(214,30): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(218,70): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(223,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(226,30): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(230,70): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(235,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   v1dx11rr.vcxproj -> D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\TerrenoSkyBill.exe
