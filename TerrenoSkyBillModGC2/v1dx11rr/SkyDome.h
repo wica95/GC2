@@ -276,7 +276,7 @@ public:
 		matrices->projMatrix = projection;
 	}
 
-	void Render(D3DXVECTOR3 trans)
+	void Render(D3DXVECTOR3 trans, float rot, char angle)
 	{
 		if (d3dContext == 0)
 			return;
@@ -294,8 +294,22 @@ public:
 		(*d3dContext)->PSSetShaderResources(0, 1, &textura);
 		(*d3dContext)->PSSetSamplers(0, 1, &texSampler);
 
-		D3DXMATRIX worldMat;
-		D3DXMatrixTranslation(&worldMat, trans.x, trans.y - 50.0f, trans.z);
+		D3DXMATRIX rotationMat;
+		D3DXMatrixRotationYawPitchRoll(&rotationMat, 0.0f, 0.0f, 0.0f);
+
+		
+		D3DXMATRIX transMat;
+		D3DXMatrixTranslation(&transMat, trans.x, trans.y - 50.0f, trans.z);
+		
+		
+		if (angle == 'X')
+			D3DXMatrixRotationX(&rotationMat, rot);
+		else if (angle == 'Y')
+			D3DXMatrixRotationY(&rotationMat, rot);
+		else if (angle == 'Z')
+			D3DXMatrixRotationZ(&rotationMat, rot);
+		/*viewMatrix *= rotationMat;*/
+		D3DXMATRIX worldMat = rotationMat * transMat;
 		D3DXMatrixTranspose(&worldMat, &worldMat);
 		matrices->worldMatrix = worldMat;
 

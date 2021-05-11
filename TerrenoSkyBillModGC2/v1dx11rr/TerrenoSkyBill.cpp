@@ -11,8 +11,8 @@
 #pragma comment (lib, "d3dx11.lib")
 #pragma comment (lib, "d3dx10.lib")
 
-#define SCREEN_X 1920
-#define SCREEN_Y 1080
+#define SCREEN_X 1080
+#define SCREEN_Y 720
 
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
@@ -100,7 +100,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
                           NULL);
 
     ShowWindow(hWnd, nCmdShow);
-	dxrr = new DXRR(hWnd, 800, 600);
+	dxrr = new DXRR(hWnd, 100, 100);
 	dxrr->vel=0;
     gamePad = new GamePadRR(1);
 
@@ -180,6 +180,18 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
             dxrr->vel = 0;
             char keyboardData[256];
             m_pKeyboardDevice->GetDeviceState(sizeof(keyboardData), (void*)&keyboardData);
+
+            if (keyboardData[DIK_E] & 0x80) {
+               
+                    dxrr->ncamara = 0;
+                
+            }
+
+            if (keyboardData[DIK_Q] & 0x80) {
+
+                dxrr->ncamara = 1;
+
+            }
 
             if (keyboardData[DIK_S] & 0x80) {
                 dxrr->vel = -5.f;
