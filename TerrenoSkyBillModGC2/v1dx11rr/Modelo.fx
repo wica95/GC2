@@ -81,7 +81,7 @@ float4 PS_Main(PS_Input pix) : SV_TARGET
 	float4 finalSpec;
 
 	textureColor = colorMap.Sample(colorSampler, pix.tex0);
-	color = float4(0.2, 0.2, 0.2, 1);// ambient color
+	color = float4(0.1, 0.1, 0.1, 1);// ambient color
 
 	specular = float4(0.0, 0.0, 0.0, 1.0); //specular color
 	specularMap = specMap.Sample(colorSampler, pix.tex0);
@@ -92,7 +92,7 @@ float4 PS_Main(PS_Input pix) : SV_TARGET
 
 	if (lightIntensity > 0) {
 		// Determine the final diffuse color based on the diffuse color and the amount of light intensity.
-		color += (float4(1.0f, 1.f, 1.f, 1.0f)/*diffuse color*/ * lightIntensity);
+		color += (float4(0.1f, 0.1f, 0.1f, 0.1f)/*diffuse color*/ * lightIntensity);
 
 		// Saturate the ambient and diffuse color.
 		color = saturate(color);

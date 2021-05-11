@@ -137,7 +137,7 @@ public:
 		//cargamos el shaders de vertices que esta contenido en el Shader.fx, note
 		//que VS_Main es el nombre del vertex shader en el shader, vsBuffer contendra
 		//al puntero del mismo
-		bool compileResult = CompileD3DShader(L"Modelo.fx", "VS_Main", "vs_4_0", &vsBuffer);
+		bool compileResult = CompileD3DShader(L"ModeloTest2.fx", "VS_Main", "vs_4_0", &vsBuffer);
 		//en caso de no poder cargarse ahi muere la cosa
 		if (compileResult == false)
 		{

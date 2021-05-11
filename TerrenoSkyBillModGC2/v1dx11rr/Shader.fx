@@ -66,7 +66,7 @@ float4 PS_Main(PS_Input pix) : SV_TARGET
 	float4 textf = (text * alphaBlend) + ((1.0 - alphaBlend) * text2);
 
 	float3 DiffuseDirection = float3(0.5f, -1.0f, 0.0f);
-	float4 DiffuseColor = float4(1.0f, 1.0f, 1.0f, 1.0f);
+	float4 DiffuseColor = float4(1.0f, 0.5f, 0.5f, 0.5f);
 
 	float3 diffuse = dot(-DiffuseDirection, pix.normal);
 	diffuse = saturate(diffuse*DiffuseColor.rgb);

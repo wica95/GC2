@@ -137,7 +137,7 @@ public:
 		//cargamos el shaders de vertices que esta contenido en el Shader.fx, note
 		//que VS_Main es el nombre del vertex shader en el shader, vsBuffer contendra
 		//al puntero del mismo
-		bool compileResult = CompileD3DShader(L"Modelo.fx", "VS_Main", "vs_4_0", &vsBuffer);
+		bool compileResult = CompileD3DShader(L"ModeloTest2.fx", "VS_Main", "vs_4_0", &vsBuffer);
 		//en caso de no poder cargarse ahi muere la cosa
 		if (compileResult == false)
 		{
@@ -181,7 +181,7 @@ public:
 		ID3DBlob* psBuffer = 0;
 		// de los vertices pasamos al pixel shader, note que el nombre del shader es el mismo
 		//ahora buscamos al pixel shader llamado PS_Main
-		compileResult = CompileD3DShader(L"Modelo.fx", "PS_Main", "ps_4_0", &psBuffer);
+		compileResult = CompileD3DShader(L"ModeloTest2.fx", "PS_Main", "ps_4_0", &psBuffer);
 
 		if (compileResult == false)
 		{

@@ -12,6 +12,12 @@
     <ContentFile>
       <FullPath>D:\avanse2GC2\TerrenoSkyBillModGC2\x64\Debug\Modelo.cso</FullPath>
     </ContentFile>
+    <ContentFile>
+      <FullPath>D:\avanse2GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\avanse2GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest2.cso</FullPath>
+    </ContentFile>
   </ContentFiles>
   <SatelliteDlls />
   <NonRecipeFileRefs />
