@@ -200,6 +200,8 @@
   <ItemGroup>
     <FxCompile Include="Billboard.hlsl" />
     <FxCompile Include="Modelo.fx" />
+    <FxCompile Include="ModeloTest.fx" />
+    <FxCompile Include="ModeloTest2.fx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

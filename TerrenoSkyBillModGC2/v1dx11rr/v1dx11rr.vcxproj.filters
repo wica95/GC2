@@ -143,5 +143,11 @@
     <FxCompile Include="Modelo.fx">
       <Filter>Archivos de código fuente</Filter>
     </FxCompile>
+    <FxCompile Include="ModeloTest.fx">
+      <Filter>Archivos de código fuente</Filter>
+    </FxCompile>
+    <FxCompile Include="ModeloTest2.fx">
+      <Filter>Archivos de código fuente</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
