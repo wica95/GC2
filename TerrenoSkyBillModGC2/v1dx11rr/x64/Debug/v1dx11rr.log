@@ -226,4 +226,5 @@ D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(148,15): warning 
 D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(226,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(230,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(235,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  LINK : D:\avanse2GC2\TerrenoSkyBillModGC2\x64\Debug\TerrenoSkyBill.exe not found or not built by the last incremental link; performing full link
   v1dx11rr.vcxproj -> D:\avanse2GC2\TerrenoSkyBillModGC2\x64\Debug\TerrenoSkyBill.exe
