@@ -1,6 +1,18 @@
 ﻿D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (Terreno.vcxproj, TerrenoSky.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Billboard.hlsl(74,10-47): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\Billboard.cso
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Modelo.fx(59,28-58): warning X3206: 'mul': implicit truncation of vector type
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\Modelo.fx(59,3-59): warning X3206: implicit truncation of vector type
   
   compilation object save succeeded; see D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\Modelo.cso
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloTest.fx(59,27-57): warning X3206: 'mul': implicit truncation of vector type
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloTest.fx(59,2-58): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest.cso
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloTest2.fx(59,27-57): warning X3206: 'mul': implicit truncation of vector type
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\v1dx11rr\ModeloTest2.fx(59,2-58): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest2.cso
+  LINK : no se encontró D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\TerrenoSkyBill.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   v1dx11rr.vcxproj -> D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\TerrenoSkyBill.exe

@@ -6,3 +6,5 @@ C:\Users\Lic Divis\Desktop\TerrenoSkyBillModGC2\x64\Debug\Billboard.cso
 C:\Users\Lic Divis\Desktop\TerrenoSkyBillModGC2\x64\Debug\Modelo.cso
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\Billboard.cso
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\Modelo.cso
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest.cso
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest2.cso
