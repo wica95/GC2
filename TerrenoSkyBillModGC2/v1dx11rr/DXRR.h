@@ -152,7 +152,7 @@ public:
 		model = new ModeloRR(d3dDevice, d3dContext, "Assets/Cofre/Cofre.obj", L"Assets/Cofre/Cofre-color.png", L"Assets/Cofre/Cofre-spec.png", 0, 0);
 		
 		m01church = new Modelo001church(d3dDevice, d3dContext, "Assets//001_Church_01//001_ChurchNew.obj", L"Assets/001_Church_01/chapel_diffuse.jpg", L"Assets/001_Church_01/chapel_specular.png", -40.0f, -120.0f);
-		m02bull = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew01.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/Cofre/Cofre-spec.png", -80.0f, -50.0f);
+		m02bull = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew01.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
 		m03houseEastern = new M03houseEastern(d3dDevice, d3dContext, "Assets//003_Middle_Eastern_Houses_OBJ//003_EasternHouseNew.obj", L"Assets/003_Middle_Eastern_Houses_OBJ/Bulding8Paint.jpg", L"Assets/003_Middle_Eastern_Houses_OBJ/specular.png", -60.0f, -80.0);
 		m04woodenCabinA = new M04woodenCabinA(d3dDevice, d3dContext, "Assets//004_WoodenCabinObj//004_WoodenC01New.obj", L"Assets/004_WoodenCabinObj/WoodCabinDif.jpg", L"Assets/004_WoodenCabinObj/WoodCabinspec.png", -70.0f, -40.0f);
 		m04woodenCabinB = new M04woodenCabinB(d3dDevice, d3dContext, "Assets//004_WoodenCabinObj//004_WoodenC02New.obj", L"Assets/004_WoodenCabinObj/WoodCabinDif.jpg", L"Assets/004_WoodenCabinObj/WoodCabinspec.png", -70.0f, -40.0f);
@@ -166,8 +166,8 @@ public:
 		m13pozo = new M13pozo(d3dDevice, d3dContext, "Assets//013_Pozo//PozoNew.obj", L"Assets/013_Pozo/brick.jpg", L"Assets/013_Pozo/bricks.png", -80.0f, -70.0f);
 		m14TreeMonster = new M14TreeMonster(d3dDevice, d3dContext, "Assets//014_treem//0014_TreeNew.obj", L"Assets/014_treem/014color.png", L"Assets/014_treem/smonster.png", 0.0f, -50.0f);
 		m15minibridge = new M15minibridge(d3dDevice, d3dContext, "Assets//015_MiniBridge//0015_BridgeNew.obj", L"Assets/015_MiniBridge/Castlewalls_1.png", L"Assets/015_MiniBridge/specwall.png", 0.0f,55.0f);
-		m16fountainA = new M16fountainA(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain01NewNew.obj", L"Assets/016_Fuente/germany010.jpg", L"Assets/Cofre/Cofre-spec.png", 0.0f, -50.0f);
-		m16fountainB = new M16fountainB(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain02New.obj", L"Assets/016_Fuente/seawaterfull2.jpg", L"Assets/Cofre/Cofre-spec.png", 0.0f, -50.0f);
+		m16fountainA = new M16fountainA(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain01NewNew.obj", L"Assets/016_Fuente/germany010.jpg", L"Assets/016_Fuente/germanyspec.png", 0.0f, -50.0f);
+		m16fountainB = new M16fountainB(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain02New.obj", L"Assets/016_Fuente/seawaterfull2.jpg", L"Assets/016_Fuente/seawaterfullspec.png", 0.0f, -50.0f);
 		
 		m17castleA = new M17castleA(d3dDevice, d3dContext, "Assets//017_Castelo//017_CastleNewA01.obj", L"Assets/017_Castelo/download.jpg", L"Assets/017_Castelo/specularcas.png", 40.0f, -65.0f);
 		m17castleB = new M17castleB(d3dDevice, d3dContext, "Assets//017_Castelo//017_CastleNewA02.obj", L"Assets/017_Castelo/download2.jpg", L"Assets/017_Castelo/especulartelo.png", 40.0f, -65.0f);
