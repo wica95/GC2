@@ -71,8 +71,12 @@ public:
 	Modelo001church* m01church;
 	M02bull* m02bull;
 	M02bull* m02bull02;
-	ModeloRR* m02bull03;
-	ModeloRR* m02bull04;
+	M02bull* m02bull03;
+	M02bull* m02bull04;
+	M02bull* m02bullm;
+	M02bull* m02bull02m;
+	M02bull* m02bull03m;
+	M02bull* m02bull04m;
 	M03houseEastern* m03houseEastern;
 	M04woodenCabinA* m04woodenCabinA;
 	M04woodenCabinB* m04woodenCabinB;
@@ -153,6 +157,12 @@ public:
 		
 		m01church = new Modelo001church(d3dDevice, d3dContext, "Assets//001_Church_01//001_ChurchNew.obj", L"Assets/001_Church_01/chapel_diffuse.jpg", L"Assets/001_Church_01/chapel_specular.png", -40.0f, -120.0f);
 		m02bull = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew01.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
+		m02bull02 = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew02.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
+		m02bull03 = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew03.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
+		m02bull04 = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew04.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
+		m02bullm = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew01move.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
+		m02bull02m = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew02move.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
+
 		m03houseEastern = new M03houseEastern(d3dDevice, d3dContext, "Assets//003_Middle_Eastern_Houses_OBJ//003_EasternHouseNew.obj", L"Assets/003_Middle_Eastern_Houses_OBJ/Bulding8Paint.jpg", L"Assets/003_Middle_Eastern_Houses_OBJ/specular.png", -60.0f, -80.0);
 		m04woodenCabinA = new M04woodenCabinA(d3dDevice, d3dContext, "Assets//004_WoodenCabinObj//004_WoodenC01New.obj", L"Assets/004_WoodenCabinObj/WoodCabinDif.jpg", L"Assets/004_WoodenCabinObj/WoodCabinspec.png", -70.0f, -40.0f);
 		m04woodenCabinB = new M04woodenCabinB(d3dDevice, d3dContext, "Assets//004_WoodenCabinObj//004_WoodenC02New.obj", L"Assets/004_WoodenCabinObj/WoodCabinDif.jpg", L"Assets/004_WoodenCabinObj/WoodCabinspec.png", -70.0f, -40.0f);
@@ -362,22 +372,13 @@ public:
 		float prevz = 0;
 		float actx = 0;
 		float actz = 0;
-		//if (iprevx == 0) {
-		//	iprevx = camara->posCam.x;
-		//	iprevz = camara->posCam.z;
-		//}
 
-		//if (vel == 0) {
 		camara->UpdateCam(vel, arriba, izqder);
 		camara2->posCam.x = camara->posCam.x;
 		camara2->posCam.z = camara->posCam.x;
 
 		camara2->posCam = camara->posCam;
-		//camara2->hdveo = camara->hdveo;
-		//camara2->hdvoy = camara->hdveo;
-		//camara2->refUp = camara->hdveo;
-		//camara2->refRight = camara->hdveo;
-		//camara2->refFront = camara->hdveo;
+
 
 		if (vel != 0) {
 			camara2->UpdateCam(-vel * 10, arriba, izqder);
@@ -396,27 +397,7 @@ public:
 			ActCam = camara2;
 		}
 
-		//	camara->posCam.x = iprevx;
-		//	camara->posCam.z = iprevz;
-		//}
-		//else {
-		//	camara->UpdateCam(vel, arriba, izqder);
-		//	camara->UpdateCam(-vel*20, 0, 0);
-		//	iprevx = camara->posCam.x;
-		//	iprevz = camara->posCam.z;
 
-		//}
-
-		/*camara->UpdateCam(vel, arriba, izqder);*/
-		
-		
-
-		//actx = camara->posCam.x;
-		//actz = camara->posCam.z;
-
-
-		//camara->posCam.x = prevx;
-		//camara->posCam.z = prevz;
 		giroide = giroide + izqder;
 		skydome->Update(camara2->vista, camara2->proyeccion);
 		
@@ -461,21 +442,53 @@ public:
 		ANG->Draw(ActCam->vista, ActCam->proyeccion, 10.0f, terreno->Superficie(10.0f, 0.0f), 0.0f, ActCam->hdveo, 10.0f, angle, 'Y', 0.1f);
 		ANG->Draw(ActCam->vista, ActCam->proyeccion, 30.0f, terreno->Superficie(30.0f, 0.0f), 0.0f, ActCam->hdveo, 10.0f, giroide, 'Y', 0.1f);
 
-		ANG->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z)-1.0f, camara->hdveo.z, camara->hdveo, 10.0f, giroide + 330.0f, 'Y', 0.1f);
-		m02bull->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z) - 1.0f, camara->hdveo.z, camara->hdveo, 10.0f, giroide + 330.0f, 'Y', 0.1f);
-		//ANG->Draw(camara->vista, camara->proyeccion, camara->posCam.x, terreno->Superficie(camara->posCam.x, camara->posCam.z) - 1.0f, camara->posCam.z, camara->posCam, 10.0f, giroide, 'Y', 0.04f);
+		static int frameA = 1;
+		frameA++;
+		if (frameA > 160) { frameA = 0; }
+
+		if (vel == 0 && izqder == 0) {
+			if (frameA >= 120) {
+				m02bull->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+			else if (frameA >= 80) {
+				m02bull02->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+			else if (frameA >= 40) {
+				m02bull03->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+			else if (frameA >= 0) {
+				m02bull04->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+
+
+			if (ncamara == 1) {
+				ANG->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+		}
+		else {
+			if (frameA >= 120) {
+				m02bullm->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+			else if (frameA >= 80) {
+				m02bull02m->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+			else if (frameA >= 40) {
+				m02bullm->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+			else if (frameA >= 0) {
+				m02bull02m->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+
+
+			if (ncamara == 1) {
+				ANG->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+			}
+
+
+		}
 		
+		//ANG->Draw(camara->vista, camara->proyeccion, camara->posCam.x, terreno->Superficie(camara->posCam.x, camara->posCam.z) - 1.0f, camara->posCam.z, camara->posCam, 10.0f, giroide, 'Y', 0.04f);
 
-		//if (vel != 0) {
-		//	camara->UpdateCam(vel*20, 0, 0);
-		//	iprevx = camara->posCam.x;
-		//	iprevz = camara->posCam.z;
-		//}
-
-
-		//camara->UpdateCam(-vel * 19, arriba, izqder);
-		//camara->UpdateCam(vel * 19, 0, 0);
-		//camara->UpdateCam(vel, 0, 0);
 		swapChain->Present( 1, 0 );
 		
 		

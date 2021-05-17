@@ -8,3 +8,4 @@ D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\Billboa
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\Modelo.cso
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest.cso
 D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest2.cso
+D:\Usuarios\JohnyJB\Documentos\GitHub\GC2\TerrenoSkyBillModGC2\x64\Debug\ModeloTest3.cso
