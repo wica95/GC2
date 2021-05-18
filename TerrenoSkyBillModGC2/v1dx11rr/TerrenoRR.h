@@ -247,7 +247,7 @@ public:
 		//crea los accesos de las texturas para los shaders 
 		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, diffuseTex, 0, 0, &colorMap, 0 );
 		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, L"Textures//Ground_Wet_Pebbles_001_basecolor.jpg", 0, 0, &colorMap2, 0 );
-		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, L"Heighmap4.jpg", 0, 0, &blendMap, 0 );
+		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, L"Heighmap5.jpg", 0, 0, &blendMap, 0 );
 
 		if( FAILED( d3dResult ) )
 		{

@@ -198,9 +198,9 @@ public:
 		ANG = new M24_ANG(d3dDevice, d3dContext, "Assets//024_Ang//newANGP.obj", L"Assets/024_Ang/andpiel2.png", L"Assets/024_Ang/andpielspecular.png", 10.0f, 0.0f);
 	    m18castleA2 = new M18castleA2(d3dDevice, d3dContext, "Assets//018_Castel//m18castleA2.obj", L"Assets/017_Castelo/download.jpg", L"Assets/Cofre/Cofre-spec.png", -50.0f, 0.0f);
 		m19castleA3 = new M19castleA3(d3dDevice, d3dContext, "Assets//019_Castel//m19castleA3.obj", L"Assets/017_Castelo/download.jpg", L"Assets/Cofre/Cofre-spec.png", -100.0f, -25.0f);
-		m25River1 = new M25River1(d3dDevice, d3dContext, "Assets//025_Water03//WRiverNewNewNew.obj", L"Assets/026_Waterfall/Water01.jpg", L"Assets/026_Waterfall/Water01bump.png", -100.0f, -25.0f);
-		m25River2 = new M25River2(d3dDevice, d3dContext, "Assets//025_Water03//WRiverNewNewNew.obj", L"Assets/026_Waterfall/Water02.jpg", L"Assets/026_Waterfall/Water02bump.png", -100.0f, -25.0f);
-		m25River3 = new M25River3(d3dDevice, d3dContext, "Assets//025_Water03//WRiverNewNewNew.obj", L"Assets/026_Waterfall/Water03.jpg", L"Assets/026_Waterfall/Water03bump.png", -100.0f, -25.0f);
+		m25River1 = new M25River1(d3dDevice, d3dContext, "Assets//025_Water03//WaterNew2.obj", L"Assets/026_Waterfall/Water01.jpg", L"Assets/026_Waterfall/Water01bump.png", -100.0f, -25.0f);
+		m25River2 = new M25River2(d3dDevice, d3dContext, "Assets//025_Water03//WaterNew2.obj", L"Assets/026_Waterfall/Water02.jpg", L"Assets/026_Waterfall/Water02bump.png", -100.0f, -25.0f);
+		m25River3 = new M25River3(d3dDevice, d3dContext, "Assets//025_Water03//WaterNew2.obj", L"Assets/026_Waterfall/Water03.jpg", L"Assets/026_Waterfall/Water03bump.png", -100.0f, -25.0f);
 
 	
 	}
