@@ -433,25 +433,25 @@ public:
 
 		m01church->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-85.0f, 41.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
 		//m02bull->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(90.0f, -19.0f), ActCam->posCam, 10.0f, 0, 'A', 0.1f);
-		m03houseEastern->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-10.0f, -129.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
-		m04woodenCabinA->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-86.0f, -23.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
-		m04woodenCabinB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-86.0f, -23.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
-		m05RuinedBuilding->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-50.0f, 44.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m03houseEastern->Draw(ActCam->vista, ActCam->proyeccion, -10.0f, terreno->Superficie(-10.0f, -129.0f), -129.0f, ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m04woodenCabinA->Draw(ActCam->vista, ActCam->proyeccion, -86.0f, terreno->Superficie(-86.0f, -23.0f), -23.0f, ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m04woodenCabinB->Draw(ActCam->vista, ActCam->proyeccion, -86.0f, terreno->Superficie(-86.0f, -23.0f), -23.0f, ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m05RuinedBuilding->Draw(ActCam->vista, ActCam->proyeccion, -50.0f, terreno->Superficie(-50.0f, 44.0f), 44.0f, ActCam->posCam, 10.0f, 0, 'A', 0.2f);
 		m06campfire->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(22.0f, 80.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
-		m07tree->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-10.0f, -92.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m07tree->Draw(ActCam->vista, ActCam->proyeccion, -10.0f, terreno->Superficie(-10.0f, -92.0f), -92.0f, ActCam->posCam, 10.0f, 0, 'A', 0.2f);
 		m09molino->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-120.0f, 0.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
 		m10flag->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(63.0f, -12.0f), ActCam->posCam, 10.0f, 0, 'A', 0.5f);
-		m11barrel->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-23.5f, -6.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+		m11barrel->Draw(ActCam->vista, ActCam->proyeccion, -23.5f, terreno->Superficie(-23.5f, -6.0f), -6.0f, ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
 		m12bride->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-153.0f, -100.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.1f);
 		m13pozo->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-20.0f, -36.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
 		m14TreeMonster->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.5f);
 		m15minibridge->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(37.0f, -105.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
 		m16fountainA->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
 		
-		m17castleA->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(100.0f, -25.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.14f);
-		m17castleB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(100.0f, -25.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.14f);
+		m17castleA->Draw(ActCam->vista, ActCam->proyeccion, 38.0f, terreno->Superficie(100.0f, -25.0f), -66.0f, ActCam->hdveo, 10.0f, 0, 'A', 0.14f);
+		m17castleB->Draw(ActCam->vista, ActCam->proyeccion, 38.0f, terreno->Superficie(100.0f, -25.0f), -66.0f, ActCam->hdveo, 10.0f, 0, 'A', 0.14f);
 		m18MarketGray->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(9.0f, 45.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.6f);
-		m19Rock->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(73.0f, 85.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.8f);
+		m19Rock->Draw(ActCam->vista, ActCam->proyeccion, 73.0f, terreno->Superficie(73.0f, 85.0f), 85.0f, ActCam->hdveo, 10.0f, 0, 'A', 0.8f);
 
 		
 
