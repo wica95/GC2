@@ -1,15 +1,13 @@
 # Blender MTL File: 'None'
 # Material Count: 1
 
-newmtl Chapel_Mat_.001
-Ns 0.060000
+newmtl blinn1SG.001
+Ns 225.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.000000 0.000000 0.000000
-Ks 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
-Ni 1.500000
+Ni 1.450000
 d 1.000000
-illum 1
-map_Bump chapel_normal.tga
-map_Kd chapel_diffuse.tga
-map_Ks chapel_spec.tga
+illum 2
+map_Kd D:\\Usuarios\\JohnyJB\\Documentos\\GitHub\\GC2\\TerrenoSkyBillModGC2\\v1dx11rr\\Assets\\009Molino\\windmill_diffuse.png

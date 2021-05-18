@@ -351,7 +351,7 @@ public:
 
 	}
 
-	void Draw(D3DXMATRIX vista, D3DXMATRIX proyeccion, float ypos, D3DXVECTOR3 posCam, float specForce, float rot, char angle, float scale)
+	void Draw(D3DXMATRIX vista, D3DXMATRIX proyeccion, float xpos, float ypos, float zpos, D3DXVECTOR3 posCam, float specForce, float rot, char angle, float scale)
 	{
 		static float rotation = 0.0f;
 		rotation += 0.01;
@@ -377,7 +377,7 @@ public:
 		d3dContext->VSSetShader(VertexShaderVS, 0, 0);
 		d3dContext->PSSetShader(solidColorPS, 0, 0);
 		//pasa lo sbuffers al shader
-		d3dContext->PSSetShaderResources(0, 1, &colorMap);	
+		d3dContext->PSSetShaderResources(0, 1, &colorMap);
 		d3dContext->PSSetShaderResources(1, 1, &specMap);
 
 		d3dContext->PSSetSamplers(0, 1, &colorMapSampler);
@@ -386,8 +386,8 @@ public:
 		D3DXMATRIX rotationMat;
 		D3DXMatrixRotationYawPitchRoll(&rotationMat, 0.0f, 0.0f, 0.0f);
 		D3DXMATRIX translationMat;
-		D3DXMatrixTranslation(&translationMat, posX, ypos, posZ);
-		if(angle == 'X')
+		D3DXMatrixTranslation(&translationMat, xpos, ypos, zpos);
+		if (angle == 'X')
 			D3DXMatrixRotationX(&rotationMat, rot);
 		else if (angle == 'Y')
 			D3DXMatrixRotationY(&rotationMat, rot);
@@ -396,7 +396,7 @@ public:
 		viewMatrix *= rotationMat;
 
 		D3DXMATRIX scaleMat;
-		D3DXMatrixScaling(&scaleMat, scale,scale,scale);
+		D3DXMatrixScaling(&scaleMat, scale, scale, scale);
 
 		D3DXMATRIX worldMat = rotationMat * scaleMat * translationMat;
 		D3DXMatrixTranspose(&worldMat, &worldMat);
@@ -413,7 +413,7 @@ public:
 		d3dContext->VSSetConstantBuffers(3, 1, &cameraPosCB);
 		d3dContext->VSSetConstantBuffers(4, 1, &specForceCB);
 		//cantidad de trabajos
-		
+
 		d3dContext->Draw(m_ObjParser.m_nVertexCount, 0);
 
 
