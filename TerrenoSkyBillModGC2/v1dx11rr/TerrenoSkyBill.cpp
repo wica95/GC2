@@ -181,9 +181,18 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
             char keyboardData[256];
             m_pKeyboardDevice->GetDeviceState(sizeof(keyboardData), (void*)&keyboardData);
 
+            //For Debugging
+            if (keyboardData[DIK_O] & 0x80) {
+
+                dxrr->deb = 1;
+
+
+            }
+
             if (keyboardData[DIK_E] & 0x80) {
                
                     dxrr->ncamara = 0;
+                    
                 
             }
 

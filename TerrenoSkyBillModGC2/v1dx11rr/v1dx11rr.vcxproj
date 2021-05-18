@@ -185,6 +185,9 @@
     <ClInclude Include="M18MarketGray.h" />
     <ClInclude Include="M19castleA3.h" />
     <ClInclude Include="M19Rock.h" />
+    <ClInclude Include="M25River1.h" />
+    <ClInclude Include="M25River2.h" />
+    <ClInclude Include="M25River3.h" />
     <ClInclude Include="Modelo001church.h" />
     <ClInclude Include="ModeloRR.h" />
     <ClInclude Include="SkyDome.h" />

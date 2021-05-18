@@ -33,6 +33,9 @@
 #include "XACT3Util.h"
 #include "M18castleA2.h"
 #include "M19castleA3.h"
+#include "M25River1.h"
+#include "M25River2.h"
+#include "M25River3.h"
 #include "ANG.h"
 class DXRR{	
 
@@ -98,12 +101,17 @@ public:
 	M15minibridge* m15minibridge;
 	M16fountainA* m16fountainA;
 	M16fountainB* m16fountainB;
+	M16fountainB* m16fountainB2;
+	M16fountainB* m16fountainB3;
 	M17castleA* m17castleA;
 	M18castleA2* m18castleA2;
 	M19castleA3* m19castleA3;
 	M17castleB* m17castleB;
 	M18MarketGray* m18MarketGray;
 	M19Rock* m19Rock;
+	M25River1* m25River1;
+	M25River2* m25River2;
+	M25River3* m25River3;
 	
 	float izqder;
 	float giroide;
@@ -112,6 +120,7 @@ public:
 	float abajo;
 	float vel;
 	int ncamara;
+	int deb;
 
 	float iprevx;
 	float iprevz;
@@ -146,6 +155,7 @@ public:
 		iprevx = 0;
 		iprevz = 0;
 		ncamara = 0;
+		deb = 0;
 		billCargaFuego();
 		//camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
 		camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
@@ -178,7 +188,9 @@ public:
 		m15minibridge = new M15minibridge(d3dDevice, d3dContext, "Assets//015_MiniBridge//0015_BridgeNew.obj", L"Assets/015_MiniBridge/Castlewalls_1.png", L"Assets/015_MiniBridge/specwall.png", 0.0f,55.0f);
 		m16fountainA = new M16fountainA(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain01NewNew.obj", L"Assets/016_Fuente/germany010.jpg", L"Assets/016_Fuente/germanyspec.png", 0.0f, -50.0f);
 		m16fountainB = new M16fountainB(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain02New.obj", L"Assets/016_Fuente/seawaterfull2.jpg", L"Assets/016_Fuente/seawaterfullspec.png", 0.0f, -50.0f);
-		
+		m16fountainB2 = new M16fountainB(d3dDevice, d3dContext, "Assets//016_Fuente//0016_Bountain02New.obj", L"Assets/016_Fuente/seawaterfull202.jpg", L"Assets/016_Fuente/seawaterfullspec02.png", 0.0f, -50.0f);
+
+
 		m17castleA = new M17castleA(d3dDevice, d3dContext, "Assets//017_Castelo//017_CastleNewA01.obj", L"Assets/017_Castelo/download.jpg", L"Assets/017_Castelo/specularcas.png", 40.0f, -65.0f);
 		m17castleB = new M17castleB(d3dDevice, d3dContext, "Assets//017_Castelo//017_CastleNewA02.obj", L"Assets/017_Castelo/download2.jpg", L"Assets/017_Castelo/especulartelo.png", 40.0f, -65.0f);
 		m18MarketGray = new M18MarketGray(d3dDevice, d3dContext, "Assets//018_Market//MarketNewNew.obj", L"Assets/018_Market/Market_Texture.png", L"Assets/018_Market/Market_Specular.png", -60.0f, 0.0f);
@@ -186,6 +198,11 @@ public:
 		ANG = new M24_ANG(d3dDevice, d3dContext, "Assets//024_Ang//newANGP.obj", L"Assets/024_Ang/andpiel2.png", L"Assets/024_Ang/andpielspecular.png", 10.0f, 0.0f);
 	    m18castleA2 = new M18castleA2(d3dDevice, d3dContext, "Assets//018_Castel//m18castleA2.obj", L"Assets/017_Castelo/download.jpg", L"Assets/Cofre/Cofre-spec.png", -50.0f, 0.0f);
 		m19castleA3 = new M19castleA3(d3dDevice, d3dContext, "Assets//019_Castel//m19castleA3.obj", L"Assets/017_Castelo/download.jpg", L"Assets/Cofre/Cofre-spec.png", -100.0f, -25.0f);
+		m25River1 = new M25River1(d3dDevice, d3dContext, "Assets//025_Water03//WRiverNewNewNew.obj", L"Assets/026_Waterfall/Water01.jpg", L"Assets/026_Waterfall/Water01bump.png", -100.0f, -25.0f);
+		m25River2 = new M25River2(d3dDevice, d3dContext, "Assets//025_Water03//WRiverNewNewNew.obj", L"Assets/026_Waterfall/Water02.jpg", L"Assets/026_Waterfall/Water02bump.png", -100.0f, -25.0f);
+		m25River3 = new M25River3(d3dDevice, d3dContext, "Assets//025_Water03//WRiverNewNewNew.obj", L"Assets/026_Waterfall/Water03.jpg", L"Assets/026_Waterfall/Water03bump.png", -100.0f, -25.0f);
+
+	
 	}
 
 	~DXRR()
@@ -430,8 +447,7 @@ public:
 		m14TreeMonster->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.5f);
 		m15minibridge->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(37.0f, -105.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
 		m16fountainA->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
-		m16fountainB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
-
+		
 		m17castleA->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(100.0f, -25.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.14f);
 		m17castleB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(100.0f, -25.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.14f);
 		m18MarketGray->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(9.0f, 45.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.6f);
@@ -441,23 +457,60 @@ public:
 
 		ANG->Draw(ActCam->vista, ActCam->proyeccion, 10.0f, terreno->Superficie(10.0f, 0.0f), 0.0f, ActCam->hdveo, 10.0f, angle, 'Y', 0.1f);
 		ANG->Draw(ActCam->vista, ActCam->proyeccion, 30.0f, terreno->Superficie(30.0f, 0.0f), 0.0f, ActCam->hdveo, 10.0f, giroide, 'Y', 0.1f);
+		if (deb == 1) {
+			int equis = camara->hdveo.x;
+			int zeta = camara->hdveo.z;
+			equis;
+			zeta;
+			
+			deb = 0;
+		}
 
 		static int frameA = 1;
 		frameA++;
 		if (frameA > 160) { frameA = 0; }
+		if (frameA >= 120) {
+			m16fountainB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+			m25River1->Draw(ActCam->vista, ActCam->proyeccion, -90.0f, terreno->Superficie(-69.0f, 53.0f) + 5.3f, -70.0f, ActCam->hdveo, 10.0f, 0, 'A', 1.0f);
+			m25River1->Draw(ActCam->vista, ActCam->proyeccion, 30.0f, terreno->Superficie(-69.0f, 53.0f) + 5.3f, -70.0f, ActCam->hdveo, 10.0f, 0, 'A', 1.5f);
+
+		}
+		else if (frameA >= 80) {
+			m16fountainB->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f) + 0.01f, ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+			m25River2->Draw(ActCam->vista, ActCam->proyeccion, -90.0f, terreno->Superficie(-69.0f, 53.0f) + 5.36f, -70.0f, ActCam->hdveo, 10.0f, 0, 'A', 1.0f);
+			m25River2->Draw(ActCam->vista, ActCam->proyeccion, 30.0f, terreno->Superficie(-69.0f, 53.0f) + 5.36f, -70.0f, ActCam->hdveo, 10.0f, 0, 'A', 1.5f);
+
+		}
+		else if (frameA >= 40) {
+			m16fountainB2->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f) + 0.03f, ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+			m25River3->Draw(ActCam->vista, ActCam->proyeccion, -90.0f, terreno->Superficie(-69.0f, 53.0f) + 5.42f, -70.0f, ActCam->hdveo, 10.0f, 0, 'A', 1.0f);
+			m25River3->Draw(ActCam->vista, ActCam->proyeccion, 30.0f, terreno->Superficie(-69.0f, 53.0f) + 5.42f, -70.0f, ActCam->hdveo, 10.0f, 0, 'A', 1.5f);
+
+		}
+		else if (frameA >= 0) {
+			m16fountainB2->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(10.0f, 10.0f) + 0.04f, ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
+			m25River2->Draw(ActCam->vista, ActCam->proyeccion, -90.0f, terreno->Superficie(-69.0f, 53.0f) + 5.36f, -70.0f, ActCam->hdveo, 10.0f, 0, 'A', 1.0f);
+			m25River2->Draw(ActCam->vista, ActCam->proyeccion, 30.0f, terreno->Superficie(-69.0f, 53.0f) + 5.36f, -70.0f, ActCam->hdveo, 10.0f, 0, 'A', 1.5f);
+
+		}
+
 
 		if (vel == 0 && izqder == 0) {
 			if (frameA >= 120) {
 				m02bull->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+				
 			}
 			else if (frameA >= 80) {
 				m02bull02->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+				
 			}
 			else if (frameA >= 40) {
 				m02bull03->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+				
 			}
 			else if (frameA >= 0) {
 				m02bull04->Draw(ActCam->vista, ActCam->proyeccion, camara->hdveo.x, terreno->Superficie(camara->hdveo.x, camara->hdveo.z), camara->hdveo.z, camara->hdveo, 10.0f, giroide + 329.8f, 'Y', 0.12f);
+				
 			}
 
 

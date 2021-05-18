@@ -67,7 +67,7 @@ public:
 		this->ancho = ancho;
 		this->alto = alto;
 		//aqui cargamos las texturas de alturas y el cesped
-		CargaParametros(L"Textures//Stylized_Leaves_002_basecolor.jpg", L"Heighmap2.jpg", 100.0f);
+		CargaParametros(L"Textures//Stylized_Leaves_002_basecolor.jpg", L"Heighmap4.jpg", 100.0f);
 	}
 
 	~TerrenoRR()
@@ -246,8 +246,8 @@ public:
 		estableceIndices();
 		//crea los accesos de las texturas para los shaders 
 		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, diffuseTex, 0, 0, &colorMap, 0 );
-		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, L"Textures//Ground_Dirt_007_basecolor.jpg", 0, 0, &colorMap2, 0 );
-		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, L"Heighmap2.jpg", 0, 0, &blendMap, 0 );
+		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, L"Textures//Ground_Wet_Pebbles_001_basecolor.jpg", 0, 0, &colorMap2, 0 );
+		d3dResult = D3DX11CreateShaderResourceViewFromFile( d3dDevice, L"Heighmap4.jpg", 0, 0, &blendMap, 0 );
 
 		if( FAILED( d3dResult ) )
 		{
