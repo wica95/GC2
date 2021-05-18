@@ -170,7 +170,7 @@ public:
 		billalga = new BillboardRR(L"Assets/Billboards/Alga1.png", L"Assets/Billboards/Alga1n.png", d3dDevice, d3dContext, 5);
 		model = new ModeloRR(d3dDevice, d3dContext, "Assets/027_walls/Wall2.obj", L"Assets/027_walls/wallsdifuse.jpg", L"Assets/027_walls/wallsheigh.png", -148.0f, 146.0f);
 		
-		m01church = new Modelo001church(d3dDevice, d3dContext, "Assets//001_Church_01//001_ChurchNew.obj", L"Assets/001_Church_01/chapel_diffuse.jpg", L"Assets/001_Church_01/chapel_specular.png", -40.0f, -120.0f);
+		m01church = new Modelo001church(d3dDevice, d3dContext, "Assets//001_Church_01//001_ChurchNew.obj", L"Assets/001_Church_01/chapel_diffuse.jpg", L"Assets/001_Church_01/chapel_specular.png", -10.0f, -120.0f);
 		m28shark = new M28shark(d3dDevice, d3dContext, "Assets//028_shark//028_shark.obj", L"Assets/028_shark/shark.png", L"Assets/028_shark/sharkheight.png", -80.0f, -50.0f);
 		m02bull = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew01.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
 		m02bull02 = new M02bull(d3dDevice, d3dContext, "Assets//002_Bull_3d//002_BullNew02.obj", L"Assets/002_Bull_3d/Bulltexture2.png", L"Assets/002_Bull_3d/BullSpec.png", -80.0f, -50.0f);
@@ -185,7 +185,7 @@ public:
 		m05RuinedBuilding = new M05RuinedBuilding(d3dDevice, d3dContext, "Assets//005_Ruined_building_OBJ//005_Newruinedbuilding.obj", L"Assets/005_Ruined_building_OBJ/text.jpg", L"Assets/005_Ruined_building_OBJ/rspec.png", -70, 100.0f);
 		m06campfire = new M06campfire(d3dDevice, d3dContext, "Assets//006_campfire//006_CampfireNew.obj", L"Assets/006_campfire/brick.jpg", L"Assets/006_campfire/sbrick.png", -60.0f, 0.0f);
 		m07tree = new M07tree(d3dDevice, d3dContext, "Assets//007_Tree_OBJ//007_TreeNew.obj", L"Assets/007_Tree_OBJ/Tree.jpg", L"Assets/007_Tree_OBJ/sTree.png", -10.0f, -92.0f);
-		m09molino = new M09molino(d3dDevice, d3dContext, "Assets//009Molino//MolinoNew.obj", L"Assets/009Molino/windmill_diffuse.png", L"Assets/009Molino/windmill_specular.png", -17.0f, -122.0f);
+		m09molino = new M09molino(d3dDevice, d3dContext, "Assets//009Molino//MolinoNew.obj", L"Assets/009Molino/windmill_diffuse.png", L"Assets/009Molino/windmill_specular.png", 130.0f, 53.0f);
 		m10flag = new M10flag(d3dDevice, d3dContext, "Assets//010_flag//0010_FlagNew.obj", L"Assets//010_flag/010_FlagB.jpg", L"Assets/010_flag/010_FlagS.png", 20.0f, -10.0f);
 		m11barrel = new M11barrel(d3dDevice, d3dContext, "Assets//011_barrel//0011_BarrelNew.obj", L"Assets/011_barrel/barrel_diffuse.png", L"Assets/011_barrel/barrel_specular.png", -60.0f,-9.0f);
 		m12bride = new M12bride(d3dDevice, d3dContext, "Assets//012_Bridge//0012_BridgeNew.obj", L"Assets/012_Bridge/BridgeMap.jpg", L"Assets/012_Bridge/BridgeSpec.png", -150.0f, -100.0f);
@@ -431,32 +431,32 @@ public:
 		TurnOnDepth();
 		terreno->Draw(ActCam->vista, ActCam->proyeccion);
 		//TurnOnAlphaBlending();
-		billboard->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -60.0f, 0.0f, terreno->Superficie(-60.0f, 0.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 84.0f, 62.0f, terreno->Superficie(84.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 74.0f, 42.0f, terreno->Superficie(74.0f, 42.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 74.0f, 60.0f, terreno->Superficie(74.0f, 60.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 64.0f, 58.0f, terreno->Superficie(64.0f, 58.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 64.0f, 61.0f, terreno->Superficie(64.0f, 61.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 54.0f, 50.0f, terreno->Superficie(54.0f, 50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 54.0f, 55.0f, terreno->Superficie(54.0f, 55.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 44.0f, 52.0f, terreno->Superficie(44.0f, 52.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 44.0f, 60.0f, terreno->Superficie(44.0f, 60.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 34.0f, 55.0f, terreno->Superficie(34.0f, 55.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 24.0f, 59.0f, terreno->Superficie(24.0f, 59.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, 14.0f, 62.0f, terreno->Superficie(14.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billboard->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -60.0f, 0.0f, terreno->Superficie(-60.0f, 0.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 84.0f, 62.0f, terreno->Superficie(84.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 74.0f, 42.0f, terreno->Superficie(74.0f, 42.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 74.0f, 60.0f, terreno->Superficie(74.0f, 60.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 64.0f, 58.0f, terreno->Superficie(64.0f, 58.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 64.0f, 61.0f, terreno->Superficie(64.0f, 61.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 54.0f, 50.0f, terreno->Superficie(54.0f, 50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 54.0f, 55.0f, terreno->Superficie(54.0f, 55.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 44.0f, 52.0f, terreno->Superficie(44.0f, 52.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 44.0f, 60.0f, terreno->Superficie(44.0f, 60.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 34.0f, 55.0f, terreno->Superficie(34.0f, 55.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 24.0f, 59.0f, terreno->Superficie(24.0f, 59.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 14.0f, 62.0f, terreno->Superficie(14.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
 
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -84.0f, 62.0f, terreno->Superficie(-84.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -74.0f, 42.0f, terreno->Superficie(-74.0f, 42.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -74.0f, 60.0f, terreno->Superficie(-74.0f, 60.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -64.0f, 58.0f, terreno->Superficie(-64.0f, 58.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -64.0f, 61.0f, terreno->Superficie(-64.0f, 61.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -54.0f, 50.0f, terreno->Superficie(-54.0f, 50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -54.0f, 55.0f, terreno->Superficie(-54.0f, 55.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -44.0f, 52.0f, terreno->Superficie(-44.0f, 52.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -44.0f, 60.0f, terreno->Superficie(-44.0f, 60.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -34.0f, 55.0f, terreno->Superficie(-34.0f, 55.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -24.0f, 59.0f, terreno->Superficie(-24.0f, 59.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
-		billalga->Draw(ActCam->vista, ActCam->proyeccion, camara->posCam, -14.0f, 62.0f, terreno->Superficie(-14.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -84.0f, 62.0f, terreno->Superficie(-84.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -74.0f, 42.0f, terreno->Superficie(-74.0f, 42.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -74.0f, 60.0f, terreno->Superficie(-74.0f, 60.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -64.0f, 58.0f, terreno->Superficie(-64.0f, 58.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -64.0f, 61.0f, terreno->Superficie(-64.0f, 61.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -54.0f, 50.0f, terreno->Superficie(-54.0f, 50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -54.0f, 55.0f, terreno->Superficie(-54.0f, 55.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -44.0f, 52.0f, terreno->Superficie(-44.0f, 52.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -44.0f, 60.0f, terreno->Superficie(-44.0f, 60.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -34.0f, 55.0f, terreno->Superficie(-34.0f, 55.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -24.0f, 59.0f, terreno->Superficie(-24.0f, 59.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -14.0f, 62.0f, terreno->Superficie(-14.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
 
 
 
@@ -467,7 +467,7 @@ public:
 		model->Draw(ActCam->vista, ActCam->proyeccion, 145.0f, terreno->Superficie(-148.0f, 146.0f) - 6.0f, 136.0f, ActCam->posCam, 1.0f, -3.11f, 'Y', 0.5f);
 
 
-		m01church->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-85.0f, 41.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
+		m01church->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-10.0f, -120.0f), ActCam->posCam, 10.0f, 1.5f, 'Y', 0.2f);
 		//m02bull->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(90.0f, -19.0f), ActCam->posCam, 10.0f, 0, 'A', 0.1f);
 		m03houseEastern->Draw(ActCam->vista, ActCam->proyeccion, -56.0f, terreno->Superficie(-56.0f, -62.0f), -22.0f, ActCam->posCam, 10.0f, 1.5f, 'Y', 0.2f);
 		m03houseEastern->Draw(ActCam->vista, ActCam->proyeccion, -56.0f, terreno->Superficie(-56.0f, -62.0f), -42.0f, ActCam->posCam, 10.0f, 1.5f, 'Y', 0.2f);
@@ -490,7 +490,7 @@ public:
 
 		m06campfire->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(22.0f, 80.0f), ActCam->posCam, 10.0f, 0, 'A', 0.2f);
 		m07tree->Draw(ActCam->vista, ActCam->proyeccion, -10.0f, terreno->Superficie(-10.0f, -92.0f), -92.0f, ActCam->posCam, 10.0f, 0, 'A', 0.2f);
-		m09molino->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(-17.0f, -122.0f), ActCam->posCam, 10.0f, 1.5f, '5', 0.2f);
+		m09molino->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(130.0f, 53.0f), ActCam->posCam, 10.0f, 1.5f, '5', 0.2f);
 
 		m10flag->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(63.0f, -12.0f), ActCam->posCam, 10.0f, 0, 'A', 0.5f);
 		m11barrel->Draw(ActCam->vista, ActCam->proyeccion, -23.5f, terreno->Superficie(-23.5f, -6.0f), -6.0f, ActCam->hdveo, 10.0f, 0, 'A', 0.2f);
