@@ -216,25 +216,25 @@ D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\M28shark.h(358,1): warning C4305: '+
 D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\ANG.h(298,64): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\ANG.h(298,1): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
 D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\ANG.h(358,1): warning C4305: '+=': truncation from 'double' to 'float'
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(399,1): warning C4305: '+=': truncation from 'double' to 'float'
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(534,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(535,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(756,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(757,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(758,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(759,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(767,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(768,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(769,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(770,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(779,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(780,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(781,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(782,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(791,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(792,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(793,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(794,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(405,1): warning C4305: '+=': truncation from 'double' to 'float'
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(554,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(555,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(777,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(778,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(779,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(780,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(788,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(789,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(790,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(791,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(800,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(801,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(802,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(803,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(812,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(813,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(814,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\DXRR.h(815,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
 D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(148,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
 D:\avanse2GC2\TerrenoSkyBillModGC2\v1dx11rr\TerrenoSkyBill.cpp(235,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data

@@ -70,6 +70,8 @@ public:
 	SkyDome *skydome;
 	BillboardRR *billboard;
 	BillboardRR* billalga;
+	BillboardRR* tree;
+	BillboardRR* arbolito;
 
 	Camara *camara;
 	Camara* camara2;
@@ -163,6 +165,7 @@ public:
 		ncamara = 0;
 		deb = 0;
 		billCargaFuego();
+		
 		//camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
 		camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
 		camara2 = new Camara(D3DXVECTOR3(0, 80, 6), D3DXVECTOR3(0, 80, 0), D3DXVECTOR3(0, 1, 0), Ancho, Alto);
@@ -170,6 +173,9 @@ public:
 		skydome = new SkyDome(32, 32, 100.0f, &d3dDevice, &d3dContext, L"SkyDome2.png");
 		billboard = new BillboardRR(L"Assets/Billboards/fuego-anim.png",L"Assets/Billboards/fuego-anim-normal.png", d3dDevice, d3dContext, 5);
 		billalga = new BillboardRR(L"Assets/Billboards/Alga1.png", L"Assets/Billboards/Alga1n.png", d3dDevice, d3dContext, 5);
+		tree = new BillboardRR(L"Assets/Billboards/bushito.png", L"Assets/Billboards/bushitoN.png", d3dDevice, d3dContext, 15);
+		arbolito = new BillboardRR(L"Assets/Billboards/arbolito.png", L"Assets/Billboards/arbolitoN.png", d3dDevice, d3dContext, 15);
+
 		model = new ModeloRR(d3dDevice, d3dContext, "Assets/027_walls/Wall2.obj", L"Assets/027_walls/wallsdifuse.jpg", L"Assets/027_walls/wallsheigh.png", -148.0f, 146.0f);
 		
 		m01church = new Modelo001church(d3dDevice, d3dContext, "Assets//001_Church_01//001_ChurchNew.obj", L"Assets/001_Church_01/chapel_diffuse.jpg", L"Assets/001_Church_01/chapel_specular.png", -10.0f, -120.0f);
@@ -476,7 +482,21 @@ public:
 		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -24.0f, 59.0f, terreno->Superficie(-24.0f, 59.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
 		billalga->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -14.0f, 62.0f, terreno->Superficie(-14.0f, 62.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
 
+		tree->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -86.0f, -10.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		tree->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -90.0f, -30.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		tree->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -85.0f, -50.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		tree->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -87.0f, -70.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		tree->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -83.0f, -80.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		tree->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, -89.0f, -100.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
 
+
+		arbolito->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 60.0f, -10.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		arbolito->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 65.0f, -30.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		arbolito->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 63.0f, -50.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		arbolito->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 64.0f, -70.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+		arbolito->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 62.0f, -80.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
+
+		arbolito->Draw(ActCam->vista, ActCam->proyeccion, ActCam->posCam, 67.0f, -99.0f, terreno->Superficie(-50.0f, -50.0f), 3, uv1, uv2, uv3, uv4, frameBillboard);
 
 		//TurnOffAlphaBlending();
 		model->Draw(ActCam->vista, ActCam->proyeccion, -148.0f, terreno->Superficie(-148.0f, 146.0f) - 6.0f, 146.0f, ActCam->posCam, 1.0f, 1.5f, 'Y', 0.5f);
@@ -739,6 +759,7 @@ public:
 		d3dContext->OMSetDepthStencilState(depthStencilDisabledState, 1);
 	}
 
+	
 	void billCargaFuego()
 	{
 		uv1[0].u = .125;
