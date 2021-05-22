@@ -4,6 +4,7 @@
 #include <d3dx11.h>
 #include <d3dx10.h>
 #include <d3dx10math.h>
+#include "XACT3Util.h"
 #include "TerrenoRR.h"
 #include "Camara.h"
 #include "SkyDome.h"
@@ -116,6 +117,7 @@ public:
 	M25River2* m25River2;
 	M25River3* m25River3;
 	M28shark* m28shark;
+	CXACT3Util m_XACT3;
 
 	float izqder;
 	float giroide;
@@ -136,7 +138,7 @@ public:
 	vector2 uv4[32];
 
 	XACTINDEX cueIndex;
-	CXACT3Util m_XACT3;
+	
 	
     DXRR(HWND hWnd, int Ancho, int Alto)
 	{
@@ -346,6 +348,22 @@ public:
 
 		d3dContext->OMSetRenderTargets(1, &backBufferTarget, depthStencilView);
 
+
+		// Initialize XACT3
+		result = m_XACT3.Initialize();
+		if (!result) return false;
+		result = m_XACT3.LoadWaveBank(L"AudioForest\\Win\\WaveBank.xwb");
+		if (!result) return false;
+		result = m_XACT3.LoadSoundBank(L"AudioForest\\Win\\SoundBank.xsb");
+		if (!result)
+			return false;
+
+		// Play XACT3 cue
+		XACTINDEX cueIndex = m_XACT3.m_pSoundBank->GetCueIndex("mixkit-european-forest-ambience-1213");
+		m_XACT3.m_pSoundBank->Play(cueIndex, 0, 0, 0);
+
+
+
 		return true;			
 		
 	}
@@ -509,7 +527,6 @@ public:
 		m18MarketGray->Draw(ActCam->vista, ActCam->proyeccion, terreno->Superficie(9.0f, 45.0f), ActCam->hdveo, 10.0f, 0, 'A', 0.6f);
 		m19Rock->Draw(ActCam->vista, ActCam->proyeccion, 73.0f, terreno->Superficie(73.0f, 85.0f), 85.0f, ActCam->hdveo, 10.0f, 0, 'A', 0.8f);
 
-		
 
 		ANG->Draw(ActCam->vista, ActCam->proyeccion, 10.0f, terreno->Superficie(10.0f, 0.0f), 0.0f, ActCam->hdveo, 10.0f, angle, 'Y', 0.1f);
 		ANG->Draw(ActCam->vista, ActCam->proyeccion, 30.0f, terreno->Superficie(30.0f, 0.0f), 0.0f, ActCam->hdveo, 10.0f, giroide, 'Y', 0.1f);
@@ -606,6 +623,7 @@ public:
 		//camara->posCam.z = actz;
 		
 	}
+
 
 	bool isPointInsideSphere(float* point, float* sphere) {
 		bool collition = false;
