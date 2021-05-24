@@ -54,6 +54,7 @@ private:
 	ID3D11Buffer* worldCB;
 	D3DXMATRIX viewMatrix;
 	D3DXMATRIX projMatrix;
+	D3DXMATRIX worldMat;
 
 	ID3D11Buffer* cameraPosCB;
 	XMFLOAT3 camPos;
@@ -64,6 +65,7 @@ private:
 	int anchoTexTerr, altoTexTerr;
 	float anchof, altof;
 	float deltax, deltay;
+	int m_vertexCount, m_indexCount;
 
 	ID3D11Device* d3dDevice;
 	ID3D11DeviceContext* d3dContext;
@@ -199,7 +201,7 @@ public:
 		}
 
 		//aqui va la carga del modelo con el metodo creadoModelPath
-		m_ObjParser.LoadFile(ModelPath); //"Assets/Tent-Tower/Tienda-Top.obj"
+		m_ObjParser.LoadFile(ModelPath, &m_indexCount); //"Assets/Tent-Tower/Tienda-Top.obj"
 		//proceso de guardar el buffer de vertices para su uso en el render
 		D3D11_BUFFER_DESC vertexDesc;
 		ZeroMemory(&vertexDesc, sizeof(vertexDesc));
@@ -399,7 +401,7 @@ public:
 		D3DXMATRIX scaleMat;
 		D3DXMatrixScaling(&scaleMat, scale, scale, scale);
 
-		D3DXMATRIX worldMat = rotationMat * scaleMat * translationMat;
+		worldMat = rotationMat * scaleMat * translationMat;
 		D3DXMatrixTranspose(&worldMat, &worldMat);
 		//actualiza los buffers del shader
 		d3dContext->UpdateSubresource(worldCB, 0, 0, &worldMat, 0, 0);
@@ -419,6 +421,29 @@ public:
 
 
 	}
+
+	int GetIndexCount()
+	{
+		return m_indexCount;
+	}
+
+	D3DMATRIX getWorldMatrix() 
+	{
+		return worldMat;
+	}
+	D3DMATRIX getViewMatrix()
+	{
+		return viewMatrix;
+	}
+	D3DMATRIX getProjMatrix()
+	{
+		return projMatrix;
+	}
+
+	ID3D11ShaderResourceView* GetTexture() 
+	{
+		return specMap;
+	};
 };
 #endif
 

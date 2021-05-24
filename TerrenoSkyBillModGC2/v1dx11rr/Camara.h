@@ -18,6 +18,7 @@ public:
 	D3DXVECTOR3 refFront;
 	D3DXMATRIX vista;
 	D3DXMATRIX proyeccion;
+	D3DXMATRIX m_reflectionViewMatrix;
 	int ancho;
 	int alto;
 
@@ -56,7 +57,7 @@ public:
 		D3DXMATRIX giraUp, giraRight; //matrices temporales para los giros
 
 		//creamos al quaternion segun el vector up
-		D3DXQuaternionRotationAxis(&quatern, &refUp, izqder); 
+		D3DXQuaternionRotationAxis(&quatern, &refUp, izqder);
 		//lo normalizamos para que no acumule error
 		D3DXQuaternionNormalize(&quatern, &quatern);
 		//creamos la matriz de rotacion basados en el quaternion
@@ -80,17 +81,65 @@ public:
 		D3DXVec3Transform(&tempo, &refFront, &giraRight);
 		refFront = (D3DXVECTOR3)tempo;
 		D3DXVec3Normalize(&refFront, &refFront);
-		
+
 
 		//ajustamos la matriz de vista con lo obtenido
-		posCam += refFront * vel/10.0;
+		posCam += refFront * vel / 10.0;
 		hdveo = posCam + refFront;
 		D3DXMatrixLookAtLH(&vista, &posCam, &hdveo, &refUp);
-		D3DXMatrixTranspose( &vista, &vista );
+		D3DXMatrixTranspose(&vista, &vista);
 		return vista;
-	}
+	};
 	~Camara()
 	{
 	}
+	void GetViewMatrix(D3DXMATRIX& viewMatrix)
+	{
+		viewMatrix = vista;
+		return;
+	}
+	D3DXMATRIX GetViewMatrix()
+	{
+		return vista;
+	}
+
+
+	void RenderReflection(float height)
+	{
+		D3DXVECTOR3 up, position, lookAt;
+		float radians;
+
+
+		// Setup the vector that points upwards.
+		up.x = 0.0f;
+		up.y = 1.0f;
+		up.z = 0.0f;
+
+		// Setup the position of the camera in the world.
+		// For planar reflection invert the Y position of the camera.
+		position.x = posCam.x;
+		position.y = -posCam.y + (height * 2.0f);
+		position.z = posCam.z;
+
+		// Calculate the rotation in radians.
+		radians = hdveo.y * 0.0174532925f;
+
+		// Setup where the camera is looking.
+		lookAt.x = sinf(radians) + posCam.x;
+		lookAt.y = position.y;
+		lookAt.z = cosf(radians) + posCam.z;
+
+		// Create the view matrix from the three vectors.
+		D3DXMatrixLookAtLH(&m_reflectionViewMatrix, &position, &lookAt, &up);
+
+		return;
+	}
+
+
+	D3DXMATRIX GetReflectionViewMatrix()
+	{
+		return m_reflectionViewMatrix;
+	}
+
 };
 #endif

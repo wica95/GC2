@@ -26,6 +26,7 @@ public:
 	// Methods
 public:
 	bool LoadFile(char* szFileName);
+	bool LoadFile(char* szFileName, int* m_indexCount);
 	void Clear();
 
 	// Attributes

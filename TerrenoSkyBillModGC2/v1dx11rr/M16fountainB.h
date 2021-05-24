@@ -13,6 +13,15 @@
 #include <vector>
 #include <iostream>
 #include "loadModel.h"
+#include "Camara.h"
+#include "M16fountainA.h"
+#include "M14TreeMonster.h"
+#include "waterShader/lightclass.h"
+#include "waterShader/lightshaderclass.h"
+#include "waterShader/refractionshaderclass.h"
+#include "waterShader/rendertextureclass.h"
+#include "waterShader/textureclass.h"
+#include "waterShader/watershaderclass.h"
 
 using namespace std;
 
@@ -44,7 +53,7 @@ private:
 	ID3D11InputLayout* inputLayout;
 	ID3D11Buffer* vertexBuffer;
 	ID3D11Buffer* indexBuffer;
-
+	
 	ID3D11ShaderResourceView* colorMap;
 	ID3D11ShaderResourceView* specMap;
 	ID3D11SamplerState* colorMapSampler;
@@ -67,14 +76,23 @@ private:
 
 	ID3D11Device* d3dDevice;
 	ID3D11DeviceContext* d3dContext;
+	HWND hwnd;
 
+	
 	CObjParser m_ObjParser;
+
+	LightClass* m_Light;
+	RenderTextureClass* m_RefractionTexture, * m_ReflectionTexture;
+	LightShaderClass* m_LightShader;
+	RefractionShaderClass* m_RefractionShader;
+	WaterShaderClass* m_WaterShader;
+	float m_waterHeight, m_waterTranslation;
 
 	float posX;
 	float posZ;
 
 public:
-	M16fountainB(ID3D11Device* D3DDevice, ID3D11DeviceContext* D3DContext, char* ModelPath, WCHAR* colorTexturePath, WCHAR* specularTexturePath, float _posX, float _posZ)
+	M16fountainB(ID3D11Device* D3DDevice, ID3D11DeviceContext* D3DContext,HWND hwnd, char* ModelPath, WCHAR* colorTexturePath, WCHAR* specularTexturePath, float _posX, float _posZ)
 	{
 		//copiamos el device y el device context a la clase terreno
 		d3dContext = D3DContext;
@@ -84,7 +102,7 @@ public:
 		posZ = _posZ;
 
 		//aqui cargamos las texturas de alturas y el cesped
-		CargaParametros(ModelPath, colorTexturePath, specularTexturePath);//L"Assets/Tent-Tower/tent_diffuse.jpg"
+		CargaParametros(ModelPath,colorTexturePath, specularTexturePath);//L"Assets/Tent-Tower/tent_diffuse.jpg"
 	}
 
 	~M16fountainB()
@@ -108,11 +126,11 @@ public:
 		DWORD shaderFlags = D3DCOMPILE_ENABLE_STRICTNESS;
 
 		ID3DBlob* errorBuffer = 0;
-		HRESULT result;
+		HRESULT d3dResult;
 
-		result = D3DX11CompileFromFile(filePath, 0, 0, entry, shaderModel, shaderFlags,
+		d3dResult = D3DX11CompileFromFile(filePath, 0, 0, entry, shaderModel, shaderFlags,
 			0, 0, buffer, &errorBuffer, 0);
-		if (FAILED(result))
+		if (FAILED(d3dResult))
 		{
 			if (errorBuffer != 0)
 			{
@@ -300,6 +318,98 @@ public:
 		D3DXMatrixTranspose(&viewMatrix, &viewMatrix);
 		D3DXMatrixTranspose(&projMatrix, &projMatrix);
 
+		// Create the light object.
+		m_Light = new LightClass;
+		if (!m_Light)
+		{
+			return false;
+		}
+
+		// Initialize the light object.
+		m_Light->SetAmbientColor(0.15f, 0.15f, 0.15f, 1.0f);
+		m_Light->SetDiffuseColor(1.0f, 1.0f, 1.0f, 1.0f);
+		m_Light->SetDirection(0.0f, -1.0f, 0.5f);
+
+		m_RefractionTexture = new RenderTextureClass;
+		if (!m_RefractionTexture)
+		{
+			return false;
+		}
+
+		// Initialize the refraction render to texture object.
+		d3dResult = m_RefractionTexture->Initialize(d3dDevice, 100, 100);
+		if (!d3dResult)
+		{
+			MessageBox(hwnd, L"Could not initialize the refraction render to texture object.", L"Error", MB_OK);
+			return false;
+		}
+
+		// Create the reflection render to texture object.
+		m_ReflectionTexture = new RenderTextureClass;
+		if (!m_ReflectionTexture)
+		{
+			return false;
+		}
+
+		// Initialize the reflection render to texture object.
+		d3dResult = m_ReflectionTexture->Initialize(d3dDevice, 100, 100);
+		if (!d3dResult)
+		{
+			MessageBox(hwnd, L"Could not initialize the reflection render to texture object.", L"Error", MB_OK);
+			return false;
+		}
+
+		// Create the light shader object.
+		m_LightShader = new LightShaderClass;
+		if (!m_LightShader)
+		{
+			return false;
+		}
+
+		// Initialize the light shader object.
+		d3dResult = m_LightShader->Initialize(d3dDevice, hwnd);
+		if (!d3dResult)
+		{
+			MessageBox(hwnd, L"Could not initialize the light shader object.", L"Error", MB_OK);
+			return false;
+		}
+
+		// Create the refraction shader object.
+		m_RefractionShader = new RefractionShaderClass;
+		if (!m_RefractionShader)
+		{
+			return false;
+		}
+
+		// Initialize the refraction shader object.
+		d3dResult = m_RefractionShader->Initialize(d3dDevice, hwnd);
+		if (!d3dResult)
+		{
+			MessageBox(hwnd, L"Could not initialize the refraction shader object.", L"Error", MB_OK);
+			return false;
+		}
+
+		// Create the water shader object.
+		m_WaterShader = new WaterShaderClass;
+		if (!m_WaterShader)
+		{
+			return false;
+		}
+
+		// Initialize the water shader object.
+		d3dResult = m_WaterShader->Initialize(d3dDevice, hwnd);
+		if (!d3dResult)
+		{
+			MessageBox(hwnd, L"Could not initialize the water shader object.", L"Error", MB_OK);
+			return false;
+		}
+
+		// Set the height of the water.
+		m_waterHeight = 2.75f;
+
+		// Initialize the position of the water.
+		m_waterTranslation = 0.0f;
+
 		return true;
 	}
 
@@ -331,6 +441,52 @@ public:
 		if (specForceCB)
 			specForceCB->Release();
 
+		if (m_WaterShader)
+		{
+			m_WaterShader->Shutdown();
+			delete m_WaterShader;
+			m_WaterShader = 0;
+		}
+
+		// Release the refraction shader object.
+		if (m_RefractionShader)
+		{
+			m_RefractionShader->Shutdown();
+			delete m_RefractionShader;
+			m_RefractionShader = 0;
+		}
+
+		// Release the light shader object.
+		if (m_LightShader)
+		{
+			m_LightShader->Shutdown();
+			delete m_LightShader;
+			m_LightShader = 0;
+		}
+
+		// Release the reflection render to texture object.
+		if (m_ReflectionTexture)
+		{
+			m_ReflectionTexture->Shutdown();
+			delete m_ReflectionTexture;
+			m_ReflectionTexture = 0;
+		}
+
+		// Release the refraction render to texture object.
+		if (m_RefractionTexture)
+		{
+			m_RefractionTexture->Shutdown();
+			delete m_RefractionTexture;
+			m_RefractionTexture = 0;
+		}
+
+		// Release the light object.
+		if (m_Light)
+		{
+			delete m_Light;
+			m_Light = 0;
+		}
+
 
 		colorMapSampler = 0;
 		colorMap = 0;
@@ -347,13 +503,14 @@ public:
 		specForceCB = 0;
 	}
 
-	void Update(float dt)
+	void Update()
 	{
-
+		
 	}
 
-	void Draw(D3DXMATRIX vista, D3DXMATRIX proyeccion, float ypos, D3DXVECTOR3 posCam, float specForce, float rot, char angle, float scale)
+	void Draw(D3DXMATRIX vista, D3DXMATRIX proyeccion, Camara* m_Camera, float ypos, D3DXVECTOR3 posCam, float specForce, float rot, char angle, float scale)
 	{
+		D3DMATRIX reflectionMatrix;
 		static float rotation = 0.0f;
 		rotation += 0.01;
 
@@ -417,8 +574,100 @@ public:
 
 		d3dContext->Draw(m_ObjParser.m_nVertexCount, 0);
 
+		reflectionMatrix = m_Camera->GetReflectionViewMatrix();
+
+
+		m_WaterShader->Render(d3dContext, m_ObjParser.m_nVertexCount, worldMat, viewMatrix,
+			proyeccion, reflectionMatrix, m_ReflectionTexture->GetShaderResourceView(),
+			m_RefractionTexture->GetShaderResourceView(), specMap,
+			m_waterTranslation, 0.01f);
+		
+
+	
+
 
 	}
+
+	//bool RenderRefractionToTexture(Camara *m_Camera, M16fountainA* Fuente, 
+	//		ID3D11RenderTargetView* backBufferTarget, ID3D11DepthStencilView* DepthStencil, 
+	//		D3DXMATRIX world, D3DXMATRIX view, D3DXMATRIX proj)
+	//{
+	//	D3DXVECTOR4 clipPlane;
+	//	D3DXMATRIX worldMatrix = world, viewMatrix = view, projectionMatrix = proj;
+	//	bool result;
+
+
+	//	// Setup a clipping plane based on the height of the water to clip everything above it.
+	//	clipPlane = D3DXVECTOR4(0.0f, -1.0f, 0.0f, m_waterHeight + 0.1f);
+
+	//	// Set the render target to be the refraction render to texture.
+	//	m_RefractionTexture->SetRenderTarget(d3dContext, DepthStencil);
+
+	//	// Clear the refraction render to texture.
+	//	m_RefractionTexture->ClearRenderTarget(d3dContext, DepthStencil, 0.0f, 0.0f, 0.0f, 1.0f);
+
+	//	// Get the world, view, and projection matrices from the camera and d3d objects.
+	//
+
+	//	// Translate to where the bath model will be rendered.
+	//	D3DXMatrixTranslation(&worldMatrix, -10.0f, 2.0f, -50.0f);
+
+
+	//	// Render the bath model using the light shader.
+	//	result = m_RefractionShader->Render(d3dContext, Fuente->GetIndexCount(), worldMatrix, viewMatrix,
+	//		projectionMatrix, Fuente->GetTexture(), m_Light->GetDirection(),
+	//		m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(), clipPlane);
+	//	if (!result)
+	//	{
+	//		return false;
+	//	}
+
+	//	// Reset the render target back to the original back buffer and not the render to texture anymore.
+	//	d3dContext->OMSetRenderTargets(1, &backBufferTarget, DepthStencil);
+
+	//	return true;
+	//}
+
+
+	//bool RenderReflectionToTexture(Camara *m_Camera, M14TreeMonster* Arbol, ID3D11RenderTargetView* backBufferTarget, 
+	//			ID3D11DepthStencilView* DepthStencil, D3DXMATRIX world, D3DXMATRIX proj)
+	//{
+	//	D3DXMATRIX reflectionViewMatrix, worldMatrix = world, projectionMatrix = proj;
+	//	bool result;
+
+
+	//	// Set the render target to be the reflection render to texture.
+	//	m_ReflectionTexture->SetRenderTarget(d3dContext, DepthStencil);
+
+	//	// Clear the reflection render to texture.
+	//	m_ReflectionTexture->ClearRenderTarget(d3dContext, DepthStencil, 0.0f, 0.0f, 0.0f, 1.0f);
+
+	//	// Use the camera to render the reflection and create a reflection view matrix.
+	//	m_Camera->RenderReflection(m_waterHeight);
+
+	//	// Get the camera reflection view matrix instead of the normal view matrix.
+	//	reflectionViewMatrix = m_Camera->GetReflectionViewMatrix();
+
+
+	//	// Translate to where the wall model will be rendered.
+	//	D3DXMatrixTranslation(&worldMatrix, 0.0f, 6.0f, -50.0f);
+
+
+	//	// Render the wall model using the light shader and the reflection view matrix.
+	//	result = m_LightShader->Render(d3dContext, Arbol->GetIndexCount(), worldMatrix, reflectionViewMatrix,
+	//		projectionMatrix, Arbol->GetTexture(), m_Light->GetDirection(),
+	//		m_Light->GetAmbientColor(), m_Light->GetDiffuseColor());
+	//	if (!result)
+	//	{
+	//		return false;
+	//	}
+
+	//	// Reset the render target back to the original back buffer and not the render to texture anymore.
+	//	d3dContext->OMSetRenderTargets(1, &backBufferTarget, DepthStencil);
+
+	//	return true;
+	//}
+
 };
 #endif
 

@@ -154,6 +154,12 @@
   <ItemGroup>
     <ClCompile Include="loadModel.cpp" />
     <ClCompile Include="TerrenoSkyBill.cpp" />
+    <ClCompile Include="waterShader\lightclass.cpp" />
+    <ClCompile Include="waterShader\lightshaderclass.cpp" />
+    <ClCompile Include="waterShader\refractionshaderclass.cpp" />
+    <ClCompile Include="waterShader\rendertextureclass.cpp" />
+    <ClCompile Include="waterShader\textureclass.cpp" />
+    <ClCompile Include="waterShader\watershaderclass.cpp" />
     <ClCompile Include="XACT3Util.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -193,10 +199,22 @@
     <ClInclude Include="ModeloRR.h" />
     <ClInclude Include="SkyDome.h" />
     <ClInclude Include="TerrenoRR.h" />
+    <ClInclude Include="waterShader\lightclass.h" />
+    <ClInclude Include="waterShader\lightshaderclass.h" />
+    <ClInclude Include="waterShader\refractionshaderclass.h" />
+    <ClInclude Include="waterShader\rendertextureclass.h" />
+    <ClInclude Include="waterShader\textureclass.h" />
+    <ClInclude Include="waterShader\watershaderclass.h" />
     <ClInclude Include="XACT3Util.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="light.ps" />
+    <None Include="light.vs" />
+    <None Include="refraction.ps" />
+    <None Include="refraction.vs" />
     <None Include="Shader.fx" />
+    <None Include="water.ps" />
+    <None Include="water.vs" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="SkyDome.fx" />

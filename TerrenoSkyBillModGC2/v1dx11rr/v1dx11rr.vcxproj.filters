@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de código fuente\Shaders">
+      <UniqueIdentifier>{08e93d9c-9e5b-4d78-97e2-4e5f26fad462}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DXRR.h">
@@ -126,16 +129,47 @@
     <ClInclude Include="M28shark.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="waterShader\lightclass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="waterShader\lightshaderclass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="waterShader\refractionshaderclass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="waterShader\rendertextureclass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="waterShader\textureclass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="waterShader\watershaderclass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shader.fx">
-      <Filter>Archivos de código fuente</Filter>
+    <None Include="light.ps">
+      <Filter>Archivos de código fuente\Shaders</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="SkyDome.fx">
-      <Filter>Archivos de código fuente</Filter>
-    </Text>
+    <None Include="light.vs">
+      <Filter>Archivos de código fuente\Shaders</Filter>
+    </None>
+    <None Include="refraction.ps">
+      <Filter>Archivos de código fuente\Shaders</Filter>
+    </None>
+    <None Include="refraction.vs">
+      <Filter>Archivos de código fuente\Shaders</Filter>
+    </None>
+    <None Include="Shader.fx">
+      <Filter>Archivos de código fuente\Shaders</Filter>
+    </None>
+    <None Include="water.ps">
+      <Filter>Archivos de código fuente\Shaders</Filter>
+    </None>
+    <None Include="water.vs">
+      <Filter>Archivos de código fuente\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TerrenoSkyBill.cpp">
@@ -147,22 +181,45 @@
     <ClCompile Include="XACT3Util.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="waterShader\lightclass.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="waterShader\lightshaderclass.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="waterShader\refractionshaderclass.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="waterShader\rendertextureclass.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="waterShader\textureclass.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="waterShader\watershaderclass.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Billboard.hlsl">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\Shaders</Filter>
     </FxCompile>
     <FxCompile Include="Modelo.fx">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\Shaders</Filter>
     </FxCompile>
     <FxCompile Include="ModeloTest.fx">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\Shaders</Filter>
     </FxCompile>
     <FxCompile Include="ModeloTest2.fx">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\Shaders</Filter>
     </FxCompile>
     <FxCompile Include="ModeloTest3.fx">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\Shaders</Filter>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="SkyDome.fx">
+      <Filter>Archivos de código fuente\Shaders</Filter>
+    </Text>
   </ItemGroup>
 </Project>
