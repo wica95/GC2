@@ -170,7 +170,7 @@ public:
 		camara = new Camara(D3DXVECTOR3(0,80,6), D3DXVECTOR3(0,80,0), D3DXVECTOR3(0,1,0), Ancho, Alto);
 		camara2 = new Camara(D3DXVECTOR3(0, 80, 6), D3DXVECTOR3(0, 80, 0), D3DXVECTOR3(0, 1, 0), Ancho, Alto);
 		terreno = new TerrenoRR(300, 300, d3dDevice, d3dContext);
-		skydome = new SkyDome(32, 32, 100.0f, &d3dDevice, &d3dContext, L"SkyDome2.png");
+		skydome = new SkyDome(32, 32, 100.0f, &d3dDevice, &d3dContext, L"SkyDome4.png");
 		billboard = new BillboardRR(L"Assets/Billboards/fuego-anim.png",L"Assets/Billboards/fuego-anim-normal.png", d3dDevice, d3dContext, 5);
 		billalga = new BillboardRR(L"Assets/Billboards/Alga1.png", L"Assets/Billboards/Alga1n.png", d3dDevice, d3dContext, 5);
 		tree = new BillboardRR(L"Assets/Billboards/bushito.png", L"Assets/Billboards/bushitoN.png", d3dDevice, d3dContext, 15);
@@ -194,6 +194,7 @@ public:
 		m06campfire = new M06campfire(d3dDevice, d3dContext, "Assets//006_campfire//006_CampfireNew.obj", L"Assets/006_campfire/brick.jpg", L"Assets/006_campfire/sbrick.png", -60.0f, 0.0f);
 		m07tree = new M07tree(d3dDevice, d3dContext, "Assets//007_Tree_OBJ//007_TreeNew.obj", L"Assets/007_Tree_OBJ/Tree.jpg", L"Assets/007_Tree_OBJ/sTree.png", -10.0f, -92.0f);
 		m09molino = new M09molino(d3dDevice, d3dContext, "Assets//009Molino//MolinoNew.obj", L"Assets/009Molino/windmill_diffuse.png", L"Assets/009Molino/windmill_specular.png", 130.0f, 53.0f);
+		
 		m10flag = new M10flag(d3dDevice, d3dContext, "Assets//010_flag//0010_FlagNew.obj", L"Assets//010_flag/010_FlagB.jpg", L"Assets/010_flag/010_FlagS.png", 20.0f, -10.0f);
 		m11barrel = new M11barrel(d3dDevice, d3dContext, "Assets//011_barrel//0011_BarrelNew.obj", L"Assets/011_barrel/barrel_diffuse.png", L"Assets/011_barrel/barrel_specular.png", -60.0f,-9.0f);
 		m12bride = new M12bride(d3dDevice, d3dContext, "Assets//012_Bridge//0012_BridgeNew.obj", L"Assets/012_Bridge/BridgeMap.jpg", L"Assets/012_Bridge/BridgeSpec.png", -150.0f, -100.0f);
