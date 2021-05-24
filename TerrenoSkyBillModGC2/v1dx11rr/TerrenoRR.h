@@ -8,7 +8,7 @@
 #include <DxErr.h>
 #include <D3Dcompiler.h>
 #include <d3dx10math.h>
-
+#include "XACT3Util.h"
 class TerrenoRR{
 private:
 	struct VertexComponent

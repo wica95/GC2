@@ -3,10 +3,10 @@
 
 #include "DXRR.h"
 #include "GamePadRR.h"
-
+//#include "DemoAudioXACT3.h"
 #include <dinput.h>
 #include <xinput.h>
-
+#include "XACT3Util.h"
 #pragma comment (lib, "d3d11.lib")
 #pragma comment (lib, "d3dx11.lib")
 #pragma comment (lib, "d3dx10.lib")
