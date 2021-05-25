@@ -232,7 +232,15 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 
             if (gamePad->IsConnected())
             {
+                if (gamePad->GetState().Gamepad.wButtons == XINPUT_GAMEPAD_Y)//Y
+                {
+                    dxrr->ncamara = 1;
+                }
 
+                if (gamePad->GetState().Gamepad.wButtons == XINPUT_GAMEPAD_X)//Y
+                {
+                    dxrr->ncamara = 0;
+                }
 
                 float grados = (float)gamePad->GetState().Gamepad.sThumbRX / 32767.0;
 
