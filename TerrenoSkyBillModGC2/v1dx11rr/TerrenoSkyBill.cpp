@@ -114,6 +114,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
         hInstance, DIRECTINPUT_VERSION,
         IID_IDirectInput8, (void**)&m_pDirectInput, 0);
     createMouseDevice(hWnd);
+    ShowCursor(FALSE);
     createKeyboardDevice(hWnd);
     while(TRUE)
     {
@@ -139,6 +140,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
         m_pKeyboardDevice->Unacquire();
         m_pKeyboardDevice->Release();
     }
+   
     m_pKeyboardDevice = NULL;
 
     if (m_pDirectInput)
